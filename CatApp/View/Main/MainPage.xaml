@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CatApp.View.Main.MainPage">
+
+    <ContentPage.Resources>
+        <!-- Button Styles -->
+        <Style x:Key="CatButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#FFA500"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10,10"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="WidthRequest" Value="250"/>
+            <Setter Property="HeightRequest" Value="50"/>
+        </Style>
+        <!-- CheckBox Style -->
+        <Style x:Key="CatCheckBoxStyle" TargetType="CheckBox">
+            <Setter Property="Color" Value="#FFA500"/>
+            <!-- Match button background color -->
+            <Setter Property="Scale" Value="1.5"/>
+            <!-- Increase the size -->
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
+        <!-- Frame as a container for the image with padding and margin -->
+        <Grid Grid.Row="0" Padding="20" Margin="10">
+            <Image Source="cat_app_logo.png"
+                   Aspect="AspectFit"
+                   Margin="0,25,0,0"
+                   SemanticProperties.Description="Cat app logo" />
+        </Grid>
+
+        <!-- Buttons occupying the bottom half -->
+        <Grid Grid.Row="1" Padding="0,50,0,0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <!-- Empty row for centering -->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <!-- Empty row for centering -->
+            </Grid.RowDefinitions>
+
+            <!-- Cat Of The Day Button -->
+            <Button Grid.Row="0" 
+            Text="Cat Of The Day!" 
+            Style="{StaticResource CatButtonStyle}"
+            Command="{Binding NavigateToCotdCommand}"
+             />
+
+            <!-- Endless Cats Button -->
+            <Button Grid.Row="1" 
+            Text="Endless Cats" 
+            Style="{StaticResource CatButtonStyle}" 
+            Command="{Binding NavigateToEndlessCatsCommand}"
+             />
+
+            <!-- Therapy Mode Button -->
+            <Button Grid.Row="2" 
+            Text="Therapy Mode" 
+            Style="{StaticResource CatButtonStyle}" 
+            Command="{Binding NavigateToTherapyModeCommand}"
+           />
+            <!-- Game Button -->
+            <Button Grid.Row="3" 
+            Text="Cat Game" 
+            Style="{StaticResource CatButtonStyle}" 
+            Command="{Binding NavigateToGmesPageCommand}"
+           />
+
+            <StackLayout Grid.Row="4" 
+                         Orientation="Horizontal" 
+                         HorizontalOptions="Center" 
+                         VerticalOptions="Center">
+
+                <CheckBox IsVisible="True" 
+                          IsChecked="True" 
+                          Style="{StaticResource CatCheckBoxStyle}" />
+
+                <Label Text="Ad Mode" 
+                       VerticalOptions="Center" 
+                       TextColor="#FFA500" 
+                       FontAttributes="Bold" />
+            </StackLayout>
+        </Grid>
+    </Grid>
+
+</ContentPage>

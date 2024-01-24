@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CatApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:main="clr-namespace:CatApp.View.Main"
+    xmlns:cotd="clr-namespace:CatApp.View.COTD"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Title="CatApp">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate main:MainPage}"
+        Route="MainPage" />
+    
+    <ShellContent
+        Title="Cat of the day"
+        ContentTemplate="{DataTemplate cotd:CatOfTheDayPage}"
+        Route="CatOfTheDayPage" />
+
+</Shell>
