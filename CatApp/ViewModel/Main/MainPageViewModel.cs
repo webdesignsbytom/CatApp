@@ -14,19 +14,19 @@ namespace CatApp.ViewModel.Main
         [RelayCommand]
         public async Task NavigateToEndlessCats()
         {
-            await Shell.Current.GoToAsync("///CatOfTheDayPage");
+            await Shell.Current.GoToAsync("///EndlessCatsPage");
         }
 
         [RelayCommand]
         public async Task NavigateToTherapyMode()
         {
-            await Shell.Current.GoToAsync("///CatOfTheDayPage");
+            await Shell.Current.GoToAsync("///TherapyModePage");
         }
 
         [RelayCommand]
         public async Task NavigateToGmesPage()
         {
-            await Shell.Current.GoToAsync("///CatOfTheDayPage");
+            await Shell.Current.GoToAsync("///GamesPage");
         }
     }
 }

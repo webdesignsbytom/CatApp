@@ -60,6 +60,8 @@
 	  <None Remove="Resources\AppIcon\cat_app_icon.png" />
 	  <None Remove="Resources\Images\cat_app_logo.png" />
 	  <None Remove="Resources\raw\Test.mp4" />
+	  <None Remove="Resources\Raw\Test2.mp4" />
+	  <None Remove="Resources\Raw\Test3.mp4" />
 	  <None Remove="Resources\Splash\splash.svg" />
 	</ItemGroup>
 
@@ -85,10 +87,25 @@
 	  <MauiAsset Update="Resources\Raw\Test.mp4">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\Test2.mp4">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\Test3.mp4">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiAsset>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="View\COTD\CatOfTheDayPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Endless\EndlessCatsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Games\GamesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\TherapyMode\TherapyModePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

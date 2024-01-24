@@ -5,6 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:main="clr-namespace:CatApp.View.Main"
     xmlns:cotd="clr-namespace:CatApp.View.COTD"
+    xmlns:endless="clr-namespace:CatApp.View.Endless"
+    xmlns:therapy="clr-namespace:CatApp.View.TherapyMode"
+    xmlns:games="clr-namespace:CatApp.View.Games"
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False"
     Title="CatApp">
@@ -17,6 +20,21 @@
     <ShellContent
         Title="Cat of the day"
         ContentTemplate="{DataTemplate cotd:CatOfTheDayPage}"
-        Route="CatOfTheDayPage" />
+        Route="CatOfTheDayPage" />    
+    
+    <ShellContent
+        Title="Endless Cats"
+        ContentTemplate="{DataTemplate endless:EndlessCatsPage}"
+        Route="EndlessCatsPage" />
+
+    <ShellContent
+        Title="Therapy Mode"
+        ContentTemplate="{DataTemplate therapy:TherapyModePage}"
+        Route="TherapyModePage" />
+    
+    <ShellContent
+        Title="Games"
+         ContentTemplate="{DataTemplate games:GamesPage}"
+        Route="GamesPage" />
 
 </Shell>
