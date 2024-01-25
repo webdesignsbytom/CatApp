@@ -33,21 +33,22 @@
         <HorizontalStackLayout VerticalOptions="End"
                      HorizontalOptions="CenterAndExpand"
                      BackgroundColor="Transparent"
-                               Spacing="50"
+                     Spacing="50"
                      Padding="10">
-            <!-- Set your desired height -->
 
             <!-- Back button -->
-            <Button Text="Back"
+            <Button Text="Like   &#xe76e;"
+                    FontFamily="Segoe Fluent Icons" 
                     Command="{Binding NavigateBackToMainCommand}"
                     Style="{StaticResource ActionButtonStyle}"
                     HorizontalOptions="Start"/>
 
-            <!-- Back button -->
-            <Button Text="&#xE72A;"
+            <!-- Next button -->
+            <Button Text="&#xe761;"
+                    FontFamily="Segoe Fluent Icons"
                     Command="{Binding PlayNextVideoCommand}"
                     Style="{StaticResource ActionButtonStyle}"
-                    HorizontalOptions="End"/>
+                    HorizontalOptions="End"/>            
 
         </HorizontalStackLayout>
 

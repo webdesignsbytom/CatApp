@@ -58,6 +58,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\AppIcon\cat_app_icon.png" />
+	  <None Remove="Resources\Fonts\SegoeIcons.ttf" />
 	  <None Remove="Resources\Images\cat_app_logo.png" />
 	  <None Remove="Resources\raw\Test.mp4" />
 	  <None Remove="Resources\Raw\Test2.mp4" />

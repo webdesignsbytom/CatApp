@@ -43,8 +43,16 @@
                     Style="{StaticResource ActionButtonStyle}"
                     HorizontalOptions="Start"/>
 
+            <!-- Like button -->
+            <Button Text="Like   &#xe76e;"
+                    FontFamily="Segoe Fluent Icons"
+                    Command="{Binding LikeVideoCommand}"
+                    Style="{StaticResource ActionButtonStyle}"
+                    HorizontalOptions="Center"/>
+
             <!-- Back button -->
-            <Button Text="&#xE72A;"
+            <Button Text="&#xe761;"
+                    FontFamily="Segoe Fluent Icons"
                     Command="{Binding PlayNextVideoCommand}"
                     Style="{StaticResource ActionButtonStyle}"
                     HorizontalOptions="End"/>

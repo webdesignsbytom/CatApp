@@ -5,6 +5,13 @@ namespace CatApp.ViewModel.TherapyMode
 {
     public partial class TherapyModeViewModel : ObservableObject
     {
+        // Like video
+        [RelayCommand]
+        public async Task LikeVideo()
+        {
+            return;
+        }
+
         // Home
         [RelayCommand]
         public async Task NavigateBackToMain()

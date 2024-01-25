@@ -5,6 +5,13 @@ namespace CatApp.ViewModel.Endless
 {
     public partial class EndlessCatsPageViewModel : ObservableObject 
     {
+        // Like video
+        [RelayCommand]
+        public async Task LikeVideo()
+        {
+            return;
+        }
+
         // Next video
         [RelayCommand]
         public async Task PlayNextVideo()

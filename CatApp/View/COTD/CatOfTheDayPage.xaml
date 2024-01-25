@@ -42,10 +42,18 @@
             <Button Text="Back"
                     Command="{Binding NavigateBackToMainCommand}"
                     Style="{StaticResource ActionButtonStyle}"
+                    HorizontalOptions="Start"/>                
+            
+            <!-- Like button -->
+            <Button Text="Like &#xe76e;"
+                    FontFamily="Segoe Fluent Icons"
+                    Command="{Binding LikeVideoCommand}"
+                    Style="{StaticResource ActionButtonStyle}"
                     HorizontalOptions="Start"/>            
             
-            <!-- Back button -->
-            <Button Text="&#xE72A;"
+            <!-- Next button -->
+            <Button Text="&#xe761;"
+                    FontFamily="Segoe Fluent Icons"
                     Command="{Binding PlayNextVideoCommand}"
                     Style="{StaticResource ActionButtonStyle}"
                     HorizontalOptions="End"/>

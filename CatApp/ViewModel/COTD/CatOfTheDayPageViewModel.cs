@@ -5,6 +5,13 @@ namespace CatApp.ViewModel.COTD
 {
     public partial class CatOfTheDayPageViewModel : ObservableObject
     {
+        // Like video
+        [RelayCommand]
+        public async Task LikeVideo()
+        {
+            return;
+        }           
+        
         // Next video
         [RelayCommand]
         public async Task PlayNextVideo()
