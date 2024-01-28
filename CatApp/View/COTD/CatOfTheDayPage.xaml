@@ -21,44 +21,49 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <Grid>
 
-        <!-- MediaElement to fill the entire grid -->
-        <toolkit:MediaElement Aspect="AspectFill" 
+        <toolkit:MediaElement Aspect="AspectFill"
+                              x:Name="CotdMediaPlayer"
                               Source="embed://Test.mp4" 
                               ShouldAutoPlay="True"
+                              ShouldMute="True"
                               ShouldLoopPlayback="True"/>
 
-        <!-- Transparent bar with back button, overlaid at the bottom of the grid -->
-        <HorizontalStackLayout VerticalOptions="End"
-                     HorizontalOptions="CenterAndExpand"
-                     BackgroundColor="Transparent"
-                               Spacing="50"
-                     Padding="10">
-            <!-- Set your desired height -->
+        <!-- Transparent bar with three equally spaced buttons, overlaid at the bottom of the grid -->
+        <Grid VerticalOptions="End"
+              HorizontalOptions="FillAndExpand"
+              BackgroundColor="Transparent"
+              Padding="10">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
             <!-- Back button -->
-            <Button Text="Back"
-                    Command="{Binding NavigateBackToMainCommand}"
-                    Style="{StaticResource ActionButtonStyle}"
-                    HorizontalOptions="Start"/>                
-            
+            <Button Grid.Column="0"
+                Text="Back"
+                Command="{Binding NavigateBackToMainCommand}"
+                Style="{StaticResource ActionButtonStyle}"/>
+
             <!-- Like button -->
-            <Button Text="Like &#xe76e;"
-                    FontFamily="Segoe Fluent Icons"
-                    Command="{Binding LikeVideoCommand}"
-                    Style="{StaticResource ActionButtonStyle}"
-                    HorizontalOptions="Start"/>            
-            
+            <Button Grid.Column="1"
+                Text="&#xe76e;"
+                FontFamily="Segoe Fluent Icons"
+                Command="{Binding LikeVideoCommand}"
+                Style="{StaticResource ActionButtonStyle}"/>
+
             <!-- Next button -->
-            <Button Text="&#xe761;"
-                    FontFamily="Segoe Fluent Icons"
-                    Command="{Binding PlayNextVideoCommand}"
-                    Style="{StaticResource ActionButtonStyle}"
-                    HorizontalOptions="End"/>
-            
-        </HorizontalStackLayout>
+            <Button Grid.Column="2"
+                Text="&#xe761;"
+                FontFamily="Segoe Fluent Icons"
+                Command="{Binding PlayNextVideoCommand}"
+                Style="{StaticResource ActionButtonStyle}"/>
+
+        </Grid>
 
     </Grid>
 </ContentPage>
