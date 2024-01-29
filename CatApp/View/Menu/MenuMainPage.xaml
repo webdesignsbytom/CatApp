@@ -1,8 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CatApp.View.Main.MainPage">
-    
+             x:Class="CatApp.View.Menu.MenuMainPage">
     <ContentPage.Resources>
         <!-- Button Styles -->
         <Style x:Key="CatButtonStyle" TargetType="Button">
@@ -48,28 +47,23 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
                 <Button Grid.Row="0" 
-                        Text="Cat Of The Day!" 
+                        Text="AI Cats" 
                         Style="{StaticResource CatButtonStyle}"
                         Command="{Binding NavigateToCotdCommand}" />
 
                 <Button Grid.Row="1" 
-                        Text="Endless Cats" 
+                        Text="Upload Cat Video" 
                         Style="{StaticResource CatButtonStyle}" 
                         Command="{Binding NavigateToEndlessCatsCommand}" />
 
                 <Button Grid.Row="2" 
-                        Text="Therapy Mode" 
+                        Text="Sponsor" 
                         Style="{StaticResource CatButtonStyle}" 
                         Command="{Binding NavigateToTherapyModeCommand}" />
 
-                <Button Grid.Row="3" 
-                        Text="Menu" 
-                        Style="{StaticResource CatButtonStyle}" 
-                        Command="{Binding NavigateToMenuPage}" />
 
             </Grid>
         </Grid>
@@ -78,8 +72,8 @@
         <Image Source="small_cat_1.png"
                AbsoluteLayout.LayoutBounds="0,1,100,100"
                AbsoluteLayout.LayoutFlags="PositionProportional"
-               Aspect="AspectFit"/>        
-        
+               Aspect="AspectFit"/>
+
         <Image Source="small_cat_4.png"
                AbsoluteLayout.LayoutBounds="0,0.75,100,100"
                AbsoluteLayout.LayoutFlags="PositionProportional"
@@ -88,13 +82,13 @@
         <Image Source="small_cat_6.png"
                AbsoluteLayout.LayoutBounds="1,1,100,100"
                AbsoluteLayout.LayoutFlags="PositionProportional"
-               Aspect="AspectFit"/>        
-        
+               Aspect="AspectFit"/>
+
         <Image Source="small_cat_7.png"
                AbsoluteLayout.LayoutBounds="0.5,1,100,100"
                AbsoluteLayout.LayoutFlags="PositionProportional"
                Aspect="AspectFit"/>
-        
+
         <Image Source="small_cat_2.png"
                AbsoluteLayout.LayoutBounds="1,0.75,100,100"
                AbsoluteLayout.LayoutFlags="PositionProportional"

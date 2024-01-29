@@ -24,9 +24,9 @@ namespace CatApp.ViewModel.Main
         }
 
         [RelayCommand]
-        public async Task NavigateToGmesPage()
+        public async Task NavigateToMenuPage()
         {
-            await Shell.Current.GoToAsync("///GamesPage");
+            await Shell.Current.GoToAsync("///MenuMainPage");
         }
     }
 }

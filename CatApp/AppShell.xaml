@@ -8,6 +8,7 @@
     xmlns:endless="clr-namespace:CatApp.View.Endless"
     xmlns:therapy="clr-namespace:CatApp.View.TherapyMode"
     xmlns:games="clr-namespace:CatApp.View.Games"
+    xmlns:menu="clr-namespace:CatApp.View.Menu"
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False"
     Title="CatApp">
@@ -35,6 +36,11 @@
     <ShellContent
         Title="Games"
          ContentTemplate="{DataTemplate games:GamesPage}"
-        Route="GamesPage" />
+        Route="GamesPage" />   
+    
+    <ShellContent
+        Title="Menu"
+         ContentTemplate="{DataTemplate menu:MenuMainPage}"
+        Route="MenuMainPage" />
 
 </Shell>

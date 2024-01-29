@@ -2,11 +2,13 @@
 using CatApp.View.Endless;
 using CatApp.View.Games;
 using CatApp.View.Main;
+using CatApp.View.Menu;
 using CatApp.View.TherapyMode;
 using CatApp.ViewModel.COTD;
 using CatApp.ViewModel.Endless;
 using CatApp.ViewModel.Games;
 using CatApp.ViewModel.Main;
+using CatApp.ViewModel.Menu;
 using CatApp.ViewModel.TherapyMode;
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
@@ -38,6 +40,8 @@ namespace CatApp
             builder.Services.AddSingleton<TherapyModeViewModel>();
             builder.Services.AddSingleton<GamesPage>();
             builder.Services.AddSingleton<GamesPageViewModel>();
+            builder.Services.AddSingleton<MenuMainPage>();
+            builder.Services.AddSingleton<MenuMainPageViewModel>();
 
 #if DEBUG
             builder.Logging.AddDebug();
