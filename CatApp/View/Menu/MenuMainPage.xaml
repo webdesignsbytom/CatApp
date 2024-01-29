@@ -34,15 +34,9 @@
                 <RowDefinition Height="5*" />
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" Padding="20" Margin="10">
-                <Image Source="cat_app_logo.png"
-                       Aspect="AspectFit"
-                       Margin="0,25,0,0"
-                       SemanticProperties.Description="Cat app logo" />
-            </Grid>
-
-            <Grid Grid.Row="1" Padding="0,50,0,0" RowSpacing="0">
+            <Grid Grid.Row="0" Padding="0,200,0,0" RowSpacing="0">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -52,25 +46,44 @@
                 <Button Grid.Row="0" 
                         Text="AI Cats" 
                         Style="{StaticResource CatButtonStyle}"
-                        Command="{Binding NavigateToCotdCommand}" />
+                        Command="{Binding NavigateToAiCatsPageCommand}" />
 
                 <Button Grid.Row="1" 
-                        Text="Upload Cat Video" 
+                        Text="Cat Game" 
                         Style="{StaticResource CatButtonStyle}" 
-                        Command="{Binding NavigateToEndlessCatsCommand}" />
+                        Command="{Binding NavigateToGamePageCommand}" />
 
                 <Button Grid.Row="2" 
                         Text="Sponsor" 
                         Style="{StaticResource CatButtonStyle}" 
-                        Command="{Binding NavigateToTherapyModeCommand}" />
+                        Command="{Binding NavigateToTherapyModeCommand}" />                
+                
 
 
+
+            </Grid>
+
+            <Grid Grid.Row="1" Padding="20" Margin="10">
+                <Button Grid.Row="3" 
+                        Text="Back" 
+                        Style="{StaticResource CatButtonStyle}" 
+                        Command="{Binding NavigateToMainPageCommand}" />
             </Grid>
         </Grid>
 
         <!-- Cat images in the bottom corners -->
         <Image Source="small_cat_1.png"
                AbsoluteLayout.LayoutBounds="0,1,100,100"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               Aspect="AspectFit"/>        
+        
+        <Image Source="small_cat_3.png"
+               AbsoluteLayout.LayoutBounds="1,0,100,100"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               Aspect="AspectFit"/>     
+        
+        <Image Source="small_cat_8.png"
+               AbsoluteLayout.LayoutBounds="0,0,100,100"
                AbsoluteLayout.LayoutFlags="PositionProportional"
                Aspect="AspectFit"/>
 

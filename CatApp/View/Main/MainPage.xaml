@@ -69,7 +69,7 @@
                 <Button Grid.Row="3" 
                         Text="Menu" 
                         Style="{StaticResource CatButtonStyle}" 
-                        Command="{Binding NavigateToMenuPage}" />
+                        Command="{Binding NavigateToMenuPageCommand}" />
 
             </Grid>
         </Grid>
