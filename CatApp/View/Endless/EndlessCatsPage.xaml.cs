@@ -22,9 +22,19 @@ public partial class EndlessCatsPage : ContentPage
         var mediaElement = this.FindByName<MediaElement>("EndlessCatsMediaPlayer");
         if (mediaElement != null)
         {
+            SetFirstVideo(mediaElement);
             mediaElement.Play();
         }
     }
+
+    public async Task SetFirstVideo(MediaElement mediaElement)
+    {
+        if (BindingContext is EndlessCatsPageViewModel viewModel)
+        {
+            viewModel.SetFirstVideoSource(mediaElement);
+        }
+    }
+
 
     protected override void OnDisappearing()
     {

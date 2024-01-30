@@ -26,7 +26,6 @@
 
         <toolkit:MediaElement Aspect="AspectFill"
                               x:Name="CotdMediaPlayer"
-                              Source="{Binding CurrentVideoUrl}" 
                               ShouldAutoPlay="True"
                               ShouldMute="True"
                               ShouldLoopPlayback="True"/>

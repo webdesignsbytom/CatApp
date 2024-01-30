@@ -12,15 +12,12 @@ public partial class CatOfTheDayPage : ContentPage
 		BindingContext = ViewModel = viewModel;
 	}
         
-    public string VideoSourceEndPoint { get; set; }
-
     protected override void OnAppearing()
     {
         if (BindingContext is CatOfTheDayPageViewModel viewModel)
         {
             viewModel.StartAudioPlayback();
         }
-
 
         var mediaElement = this.FindByName<MediaElement>("CotdMediaPlayer");
         if (mediaElement != null)

@@ -39,9 +39,17 @@ namespace CatApp
         protected override void OnSleep()
         {
             // Stop audio and video playback here
-            CotdViewModel.StopAudioPlayback();
-            EndlessCatsViewModel.StopAudioPlayback();
-            TherapyViewModel.StopAudioPlayback();
+            CotdViewModel.PauseAudioPlayback();
+            EndlessCatsViewModel.PauseAudioPlayback();
+            TherapyViewModel.PauseAudioPlayback();
         }
+
+/*        protected override void OnResume()
+        {
+            Console.WriteLine("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ");
+            CotdViewModel.PlayAudioPlayback();
+            EndlessCatsViewModel.PlayAudioPlayback();
+            TherapyViewModel.PlayAudioPlayback();
+        }*/
     }
 }

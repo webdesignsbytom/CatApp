@@ -22,7 +22,16 @@ public partial class TherapyModePage : ContentPage
         var mediaElement = this.FindByName<MediaElement>("TherapyModeMediaPlayer");
         if (mediaElement != null)
         {
+            SetFirstVideo(mediaElement);
             mediaElement.Play();
+        }
+    }
+
+    public async Task SetFirstVideo(MediaElement mediaElement)
+    {
+        if (BindingContext is TherapyModeViewModel viewModel)
+        {
+            viewModel.SetVideoSource(mediaElement);
         }
     }
     protected override void OnDisappearing()

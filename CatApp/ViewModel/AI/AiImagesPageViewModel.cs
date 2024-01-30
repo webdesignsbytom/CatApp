@@ -15,6 +15,7 @@ namespace CatApp.ViewModel.AI
         IAptabaseClient _aptabase;
         // Images
         public int currentImageIndex = 1;
+        private int TotalImagesNum = 47;
 
         [ObservableProperty]
         public string currentImage = "Resources/Images/Ai/cat_ai_image_1.png";
@@ -31,8 +32,11 @@ namespace CatApp.ViewModel.AI
         [RelayCommand]
         public void OpenNextImage()
         {
-            currentImageIndex++;
-            UpdateCurrentImage();
+            if (currentImageIndex <= TotalImagesNum)
+            {
+                currentImageIndex++;
+                UpdateCurrentImage();
+            }
         }
 
         // Previous image
@@ -53,20 +57,19 @@ namespace CatApp.ViewModel.AI
             OnPropertyChanged(nameof(CurrentImage)); // Notify the UI to update the image
         }
 
-        // Navigate home
-        [RelayCommand]
-        public async Task NavigateToMainPage()
-        {
-            await Shell.Current.GoToAsync("///MainPage");
-        }
-
-
         // Analytics
         private void TrackPageLoad()
         {
             _aptabase.TrackEvent("screen_view", new() {
                 { "name", "AI Cats" }
             });
+        }
+
+        // Navigate home
+        [RelayCommand]
+        public async Task NavigateToMainPage()
+        {
+            await Shell.Current.GoToAsync("///MainPage");
         }
     }
 }

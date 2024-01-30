@@ -26,8 +26,6 @@
 
         <toolkit:MediaElement Aspect="AspectFill" 
                               x:Name="EndlessCatsMediaPlayer"
-                              Source="embed://cat_video2.mp4" 
-                              Volume="0.5"
                               ShouldAutoPlay="True"
                               ShouldMute="True"
                               ShouldLoopPlayback="True"/>
