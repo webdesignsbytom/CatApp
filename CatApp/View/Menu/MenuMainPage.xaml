@@ -56,7 +56,7 @@
                 <Button Grid.Row="2" 
                         Text="Sponsor" 
                         Style="{StaticResource CatButtonStyle}" 
-                        Command="{Binding NavigateToTherapyModeCommand}" />                
+                        Command="{Binding VisitSponsorWebsiteCommand}" />                
                 
 
 

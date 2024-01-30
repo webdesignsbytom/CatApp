@@ -6,12 +6,12 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="ActionButtonStyle" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#010101"/>
+            <Style x:Key="CatButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#FFA500"/>
                 <Setter Property="TextColor" Value="White"/>
-                <Setter Property="CornerRadius" Value="5"/>
-                <Setter Property="Padding" Value="30,10"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontSize" Value="22"/>
                 <Setter Property="WidthRequest" Value="100"/>
             </Style>
             <Style x:Key="GeneralTextStyle" TargetType="Label">
@@ -27,6 +27,7 @@
         <toolkit:MediaElement Aspect="AspectFill"
                               x:Name="TherapyModeMediaPlayer"
                               Source="embed://Test3.mp4" 
+                              Volume="0.5"
                               ShouldAutoPlay="True"
                               ShouldMute="True"
                               ShouldLoopPlayback="True"/>
@@ -47,21 +48,21 @@
             <Button Grid.Column="0"
                     Text="Back"
                     Command="{Binding NavigateBackToMainCommand}"
-                    Style="{StaticResource ActionButtonStyle}"/>
+                    Style="{StaticResource CatButtonStyle}"/>
 
             <!-- Like button -->
             <Button Grid.Column="1"
                     Text="&#xe76e;"
                     FontFamily="Segoe Fluent Icons"
                     Command="{Binding LikeVideoCommand}"
-                    Style="{StaticResource ActionButtonStyle}"/>
+                    Style="{StaticResource CatButtonStyle}"/>
 
             <!-- Next button -->
             <Button Grid.Column="2"
                     Text="&#xe761;"
                     FontFamily="Segoe Fluent Icons"
                     Command="{Binding PlayNextVideoCommand}"
-                    Style="{StaticResource ActionButtonStyle}"/>
+                    Style="{StaticResource CatButtonStyle}"/>
 
         </Grid>
 

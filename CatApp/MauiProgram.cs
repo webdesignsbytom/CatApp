@@ -1,9 +1,11 @@
-﻿ using CatApp.View.COTD;
+﻿using CatApp.View.AI;
+using CatApp.View.COTD;
 using CatApp.View.Endless;
 using CatApp.View.Games;
 using CatApp.View.Main;
 using CatApp.View.Menu;
 using CatApp.View.TherapyMode;
+using CatApp.ViewModel.AI;
 using CatApp.ViewModel.COTD;
 using CatApp.ViewModel.Endless;
 using CatApp.ViewModel.Games;
@@ -22,6 +24,7 @@ namespace CatApp
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseAptabase("A-EU-1714048004") // 👈 this is where you enter your App Key
                 .UseMauiCommunityToolkitMediaElement()
                 .ConfigureFonts(fonts =>
                 {
@@ -42,6 +45,8 @@ namespace CatApp
             builder.Services.AddSingleton<GamesPageViewModel>();
             builder.Services.AddSingleton<MenuMainPage>();
             builder.Services.AddSingleton<MenuMainPageViewModel>();
+            builder.Services.AddSingleton<AiImagesPage>();
+            builder.Services.AddSingleton<AiImagesPageViewModel>();
 
 #if DEBUG
             builder.Logging.AddDebug();

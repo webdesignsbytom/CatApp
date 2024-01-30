@@ -11,7 +11,8 @@
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="CornerRadius" Value="10"/>
-                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontSize" Value="22"/>
+                <Setter Property="WidthRequest" Value="100"/>
             </Style>
             <Style x:Key="GeneralTextStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="#555555"/>
@@ -25,15 +26,17 @@
 
         <toolkit:MediaElement Aspect="AspectFill"
                               x:Name="CotdMediaPlayer"
-                              Source="embed://Test.mp4" 
+                              Source="https://cat-app-server-sigma.vercel.app/assets/videos/cotd/cotd.mp4" 
                               ShouldAutoPlay="True"
                               ShouldMute="True"
+                              Volume="0.5"
                               ShouldLoopPlayback="True"/>
 
         <!-- Transparent bar with three equally spaced buttons, overlaid at the bottom of the grid -->
         <Grid VerticalOptions="End"
               HorizontalOptions="FillAndExpand"
               BackgroundColor="Transparent"
+              Margin="0,0,0,20"
               Padding="10">
 
             <Grid.ColumnDefinitions>

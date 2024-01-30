@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using Aptabase.Maui;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Plugin.Maui.Audio;
 
@@ -7,14 +8,24 @@ namespace CatApp.ViewModel.COTD
     public partial class CatOfTheDayPageViewModel : ObservableObject
     {
         private IAudioPlayer audioPlayer;
+        IAptabaseClient _aptabase;
+
+        public CatOfTheDayPageViewModel(IAptabaseClient aptabase)
+        {
+            _aptabase = aptabase;
+
+            TrackPageLoad();
+        }
+
+        private void TrackPageLoad()
+        {
+            _aptabase.TrackEvent("screen_view", new() {
+                { "name", "Cat of the Day" }
+                });
+        }
 
         [ObservableProperty]
         public string currentVideoUrl = "embed://Test.mp4";
-
-        public CatOfTheDayPageViewModel()
-        {
-            StartAudioPlayback();
-        }
 
         public async void StartAudioPlayback()
         {
