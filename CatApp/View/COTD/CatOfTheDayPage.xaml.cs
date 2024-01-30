@@ -11,6 +11,8 @@ public partial class CatOfTheDayPage : ContentPage
 		InitializeComponent();
 		BindingContext = ViewModel = viewModel;
 	}
+        
+    public string VideoSourceEndPoint { get; set; }
 
     protected override void OnAppearing()
     {
@@ -19,12 +21,22 @@ public partial class CatOfTheDayPage : ContentPage
             viewModel.StartAudioPlayback();
         }
 
+
         var mediaElement = this.FindByName<MediaElement>("CotdMediaPlayer");
         if (mediaElement != null)
         {
+            SetFirstVideo(mediaElement);
             mediaElement.Play();
         }
     }
+    public async Task SetFirstVideo(MediaElement mediaElement)
+    {
+        if (BindingContext is CatOfTheDayPageViewModel viewModel)
+        {
+            viewModel.SetFirstVideoSource(mediaElement);
+        }
+    }
+
     protected override void OnDisappearing()
     {
         base.OnDisappearing();

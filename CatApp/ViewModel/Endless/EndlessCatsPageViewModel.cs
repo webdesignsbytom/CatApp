@@ -42,9 +42,16 @@ namespace CatApp.ViewModel.Endless
             return;
         }
 
+        // Previous video
+        [RelayCommand]
+        public async Task OpenPreviousVideo()
+        {
+            await Shell.Current.GoToAsync("///MainPage");
+        }        
+        
         // Next video
         [RelayCommand]
-        public async Task PlayNextVideo()
+        public async Task OpenNextVideo()
         {
             await Shell.Current.GoToAsync("///MainPage");
         }

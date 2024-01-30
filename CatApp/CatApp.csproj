@@ -59,6 +59,47 @@
 	<ItemGroup>
 	  <None Remove="Resources\AppIcon\cat_app_icon.png" />
 	  <None Remove="Resources\Fonts\SegoeIcons.ttf" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_1.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_10.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_11.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_12.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_13.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_14.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_15.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_16.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_17.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_18.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_19.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_2.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_20.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_21.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_22.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_23.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_24.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_25.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_26.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_27.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_28.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_29.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_3.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_30.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_31.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_32.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_33.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_34.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_35.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_36.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_37.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_38.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_39.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_4.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_40.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_41.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_5.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_6.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_7.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_8.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_9.png" />
 	  <None Remove="Resources\Images\cat_app_logo.png" />
 	  <None Remove="Resources\Images\small_cat_1.png" />
 	  <None Remove="Resources\Images\small_cat_2.png" />
@@ -95,6 +136,132 @@
 
 	<ItemGroup>
 	  <Folder Include="Model\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_1.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_10.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_11.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_12.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_13.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_14.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_15.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_16.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_17.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_18.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_19.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_2.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_20.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_21.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_22.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_23.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_24.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_25.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_26.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_27.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_28.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_38.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_39.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_40.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_41.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_29.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_3.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_30.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_31.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_32.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_33.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_34.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_35.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_36.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_37.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_4.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_5.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_6.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_7.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_8.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_9.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
 	</ItemGroup>
 
 	<ItemGroup>

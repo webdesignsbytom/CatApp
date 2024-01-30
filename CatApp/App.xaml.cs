@@ -7,8 +7,10 @@ namespace CatApp
 {
     public partial class App : Application
     {
+        // Analytics
         IAptabaseClient _aptabase;
 
+        // Models
         public CatOfTheDayPageViewModel CotdViewModel { get; set; }
         public EndlessCatsPageViewModel EndlessCatsViewModel { get; set; }
         public TherapyModeViewModel TherapyViewModel { get; set; }

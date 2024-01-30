@@ -3,54 +3,70 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Plugin.Maui.Audio;
 using System.Collections.ObjectModel;
+using System.Reflection;
 
 namespace CatApp.ViewModel.AI
 {
     public partial class AiImagesPageViewModel : ObservableObject
     {
+        // Audio
         private IAudioPlayer audioPlayer;
-        private int currentImageIndex = 0;
-        private ObservableCollection<string> imagePaths = new ObservableCollection<string>();
-
+        // Analytics
         IAptabaseClient _aptabase;
+        // Images
+        public int currentImageIndex = 1;
+
+        [ObservableProperty]
+        public string currentImage = "Resources/Images/Ai/cat_ai_image_1.png";
 
         public AiImagesPageViewModel(IAptabaseClient aptabase)
         {
             _aptabase = aptabase;
 
             TrackPageLoad();
-            LoadImagePaths();
-
+            UpdateCurrentImage(); // Call this to ensure the image is set correctly at startup
         }
 
+        // Next image
+        [RelayCommand]
+        public void OpenNextImage()
+        {
+            currentImageIndex++;
+            UpdateCurrentImage();
+        }
+
+        // Previous image
+        [RelayCommand]
+        public void OpenPreviousImage()
+        {
+            if (currentImageIndex > 1)
+            {
+                currentImageIndex--;
+                UpdateCurrentImage();
+            }
+        }
+
+        // Update current image based on index
+        private void UpdateCurrentImage()
+        {
+            currentImage = $"Resources/Images/Ai/cat_ai_image_{currentImageIndex}.png";
+            OnPropertyChanged(nameof(CurrentImage)); // Notify the UI to update the image
+        }
+
+        // Navigate home
+        [RelayCommand]
+        public async Task NavigateToMainPage()
+        {
+            await Shell.Current.GoToAsync("///MainPage");
+        }
+
+
+        // Analytics
         private void TrackPageLoad()
         {
             _aptabase.TrackEvent("screen_view", new() {
                 { "name", "AI Cats" }
-                });
-        }
-
-
-        private void LoadImagePaths()
-        {
-/*            var imageFolder = Path.Combine(FileSystem.AppPackageDirectory, "Resources", "Images", "Ai");
-            var files = Directory.GetFiles(imageFolder);
-            foreach (var file in files)
-            {
-                imagePaths.Add(file);
-            }*/
-        }
-
-        public string CurrentImagePath => imagePaths.Count > 0 ? imagePaths[currentImageIndex] : null;
-
-        [RelayCommand]
-        public void PlayNextImage()
-        {
-            if (imagePaths.Count > 0)
-            {
-                currentImageIndex = (currentImageIndex + 1) % imagePaths.Count;
-                OnPropertyChanged(nameof(CurrentImagePath));
-            }
+            });
         }
     }
 }
