@@ -56,7 +56,7 @@ namespace CatApp.ViewModel.TherapyMode
 
         public void PlayAudioPlayback()
         {
-            audioPlayer?.Pause();
+            audioPlayer?.Play();
         }
 
 

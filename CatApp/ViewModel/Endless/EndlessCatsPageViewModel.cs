@@ -103,7 +103,7 @@ namespace CatApp.ViewModel.Endless
 
         public void PlayAudioPlayback()
         {
-            audioPlayer?.Pause();
+            audioPlayer?.Play();
         }
 
         // Analytics

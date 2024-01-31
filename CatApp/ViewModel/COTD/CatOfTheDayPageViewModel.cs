@@ -103,7 +103,7 @@ namespace CatApp.ViewModel.COTD
 
         public void PlayAudioPlayback()
         {
-            audioPlayer?.Pause();
+            audioPlayer?.Play();
         }
 
         // Analytics

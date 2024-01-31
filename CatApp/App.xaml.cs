@@ -1,4 +1,7 @@
 ﻿using Aptabase.Maui;
+using CatApp.View.COTD;
+using CatApp.View.Endless;
+using CatApp.View.TherapyMode;
 using CatApp.ViewModel.COTD;
 using CatApp.ViewModel.Endless;
 using CatApp.ViewModel.TherapyMode;
@@ -9,7 +12,6 @@ namespace CatApp
     {
         // Analytics
         IAptabaseClient _aptabase;
-
         // Models
         public CatOfTheDayPageViewModel CotdViewModel { get; set; }
         public EndlessCatsPageViewModel EndlessCatsViewModel { get; set; }
@@ -43,13 +45,28 @@ namespace CatApp
             EndlessCatsViewModel.PauseAudioPlayback();
             TherapyViewModel.PauseAudioPlayback();
         }
-
-/*        protected override void OnResume()
+        protected override void OnResume()
         {
-            Console.WriteLine("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ");
-            CotdViewModel.PlayAudioPlayback();
-            EndlessCatsViewModel.PlayAudioPlayback();
-            TherapyViewModel.PlayAudioPlayback();
-        }*/
+            if (MainPage is Shell shell)
+            {
+                // Get the current page
+                var currentPage = shell.CurrentItem?.CurrentItem as IShellSectionController;
+                var visiblePage = currentPage?.PresentedPage;
+
+                // Restart audio
+                if (visiblePage is CatOfTheDayPage)
+                {
+                    CotdViewModel.PlayAudioPlayback();
+                }
+                else if (visiblePage is EndlessCatsPage)
+                {
+                    EndlessCatsViewModel.PlayAudioPlayback();
+                }
+                else if (visiblePage is TherapyModePage)
+                {
+                    TherapyViewModel.PlayAudioPlayback();
+                }
+            }
+        }
     }
 }
