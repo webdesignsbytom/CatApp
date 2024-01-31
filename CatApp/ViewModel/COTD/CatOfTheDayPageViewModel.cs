@@ -56,6 +56,8 @@ namespace CatApp.ViewModel.COTD
         {
             MediaElementController = mediaElement;
             MediaElementController.Source = MediaSource.FromResource("cat_video1.mp4");
+            // MediaElementController.Source = "http://localhost:4000/videos/cat-of-the-day";
+            // MediaElementController.Source = "https://cat-app-server-sigma.vercel.app/videos/cat-of-the-day";
         }
 
         public string CurrentVideoPath
