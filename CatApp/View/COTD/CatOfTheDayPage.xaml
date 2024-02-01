@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:LangProg.Resources.Utils.Localization"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="CatApp.View.COTD.CatOfTheDayPage">
 
@@ -28,6 +29,7 @@
                               x:Name="CotdMediaPlayer"
                               ShouldAutoPlay="True"
                               ShouldMute="True"
+                              ShouldShowPlaybackControls="False"
                               ShouldLoopPlayback="True"/>
 
         <!-- Transparent bar with three equally spaced buttons, overlaid at the bottom of the grid -->

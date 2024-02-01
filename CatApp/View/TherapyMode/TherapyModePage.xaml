@@ -27,6 +27,7 @@
         <toolkit:MediaElement Aspect="AspectFill" 
                           x:Name="TherapyModeMediaPlayer"
                           ShouldAutoPlay="True"
+                          ShouldShowPlaybackControls="False"
                           ShouldMute="True"
                           ShouldLoopPlayback="True"/>
 

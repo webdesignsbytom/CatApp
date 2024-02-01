@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:CatApp.Resources.Utils.Localization"
              x:Class="CatApp.View.Menu.MenuMainPage">
+    
     <ContentPage.Resources>
         <!-- Button Styles -->
         <Style x:Key="CatButtonStyle" TargetType="Button">
@@ -44,17 +46,17 @@
                 </Grid.RowDefinitions>
 
                 <Button Grid.Row="0" 
-                        Text="AI Cats" 
+                        Text="{i18n:Translate AICats}" 
                         Style="{StaticResource CatButtonStyle}"
                         Command="{Binding NavigateToAiCatsPageCommand}" />
 
                 <Button Grid.Row="1" 
-                        Text="Cat Game" 
+                        Text="{i18n:Translate CatGameButton}" 
                         Style="{StaticResource CatButtonStyle}" 
                         Command="{Binding NavigateToGamePageCommand}" />
 
                 <Button Grid.Row="2" 
-                        Text="Sponsor" 
+                        Text="{i18n:Translate SponsorButton}" 
                         Style="{StaticResource CatButtonStyle}" 
                         Command="{Binding VisitSponsorWebsiteCommand}" />                
                 
@@ -65,7 +67,7 @@
 
             <Grid Grid.Row="1" Padding="20" Margin="10">
                 <Button Grid.Row="3" 
-                        Text="Back" 
+                        Text="{i18n:Translate AICats}" 
                         Style="{StaticResource CatButtonStyle}" 
                         Command="{Binding NavigateToMainPageCommand}" />
             </Grid>
