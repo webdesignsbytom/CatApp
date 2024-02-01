@@ -90,6 +90,7 @@ namespace CatApp.ViewModel.COTD
         {
             audioPlayer = AudioManager.Current.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("cats_audio3.mp3"));
             audioPlayer.Volume = 0.5;
+            audioPlayer.Loop = true;
             audioPlayer.Play();
         }
 

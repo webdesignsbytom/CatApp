@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:i18n="clr-namespace:CatApp.Resources.Utils.Localization"
+             xmlns:review="clr-namespace:CatApp.View.Controls"
              x:Class="CatApp.View.Main.MainPage">
     
     <ContentPage.Resources>
@@ -25,6 +26,7 @@
             <Setter Property="HorizontalOptions" Value="Center"/>
         </Style>
     </ContentPage.Resources>
+    
     <AbsoluteLayout>
 
         <!-- Original Grid layout -->
@@ -101,5 +103,13 @@
                AbsoluteLayout.LayoutFlags="PositionProportional"
                Aspect="AspectFit"/>
 
+
+    <!-- First use after app install welcome message -->
+    <review:ReviewTheAppModal 
+                    x:Name="reviewModel"
+                    IsVisible="{Binding ReviewNotificationVisible}"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+        
     </AbsoluteLayout>
 </ContentPage>

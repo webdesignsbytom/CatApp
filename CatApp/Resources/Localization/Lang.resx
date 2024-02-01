@@ -138,6 +138,18 @@
   <data name="MenuButton" xml:space="preserve">
     <value>Menu</value>
   </data>
+  <data name="ReviewModalButton" xml:space="preserve">
+    <value>Review Now</value>
+  </data>
+  <data name="ReviewModalCloseButton" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ReviewModalMessage" xml:space="preserve">
+    <value>Please review us on the app store and help us and the cats out!</value>
+  </data>
+  <data name="ReviewModalTitle" xml:space="preserve">
+    <value>Enjoying our App?</value>
+  </data>
   <data name="SponsorButton" xml:space="preserve">
     <value>Sponsor</value>
   </data>

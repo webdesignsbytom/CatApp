@@ -39,8 +39,9 @@ namespace CatApp.ViewModel.TherapyMode
         // Audio controls
         public async void StartAudioPlayback()
         {
-            audioPlayer = AudioManager.Current.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("cats_audio2.mp3"));
+            audioPlayer = AudioManager.Current.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("Audio/cat_audio2.mp3"));
             audioPlayer.Volume = 0.5;
+            audioPlayer.Loop = true;
             audioPlayer.Play();
         }
 

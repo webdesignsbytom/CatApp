@@ -6,7 +6,12 @@ namespace CatApp.ViewModel.Main
 {
     public partial class MainPageViewModel : ObservableObject
     {
+        // Analytics
         IAptabaseClient _aptabase;
+
+        // Review modal
+        [ObservableProperty]
+        private bool reviewNotificationVisible = true;
 
         public MainPageViewModel(IAptabaseClient aptabase)
         {
@@ -21,6 +26,16 @@ namespace CatApp.ViewModel.Main
                 { "name", "Main" }
                 });
         }
+
+        // Toggle controls
+        // Close play
+        [RelayCommand]
+        public async Task CloseReviewModal()
+        {
+            ReviewNotificationVisible = false;
+        }
+
+        // Navigation
 
         [RelayCommand]
         public async Task NavigateToCotd()

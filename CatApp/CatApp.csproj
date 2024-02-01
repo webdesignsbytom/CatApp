@@ -276,6 +276,24 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiAsset Update="Resources\Raw\Audio\cat_audio1.mp3">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\Audio\cat_audio2.mp3">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\Audio\cat_audio3.mp3">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\Audio\cat_audio4.mp3">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\Audio\cat_audio5.mp3">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\Audio\cat_audio6.mp3">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiAsset>
 	  <MauiAsset Update="Resources\Raw\cats_audio1.mp3">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
@@ -358,6 +376,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="View\AI\AiImagesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Controls\ReviewTheAppModal.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\COTD\CatOfTheDayPage.xaml">

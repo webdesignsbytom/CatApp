@@ -88,6 +88,7 @@ namespace CatApp.ViewModel.Endless
         {
             audioPlayer = AudioManager.Current.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("cats_audio1.mp3"));
             audioPlayer.Volume = 0.5;
+            audioPlayer.Loop = true;
             audioPlayer.Play();
         }
 

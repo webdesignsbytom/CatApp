@@ -67,7 +67,7 @@
 
             <Grid Grid.Row="1" Padding="20" Margin="10">
                 <Button Grid.Row="3" 
-                        Text="{i18n:Translate AICats}" 
+                        Text="{i18n:Translate BackButton}" 
                         Style="{StaticResource CatButtonStyle}" 
                         Command="{Binding NavigateToMainPageCommand}" />
             </Grid>
