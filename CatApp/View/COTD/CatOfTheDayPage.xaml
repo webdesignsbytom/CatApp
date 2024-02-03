@@ -26,11 +26,21 @@
     <Grid>
 
         <toolkit:MediaElement Aspect="AspectFill"
-                              x:Name="CotdMediaPlayer"
-                              ShouldAutoPlay="True"
-                              ShouldMute="True"
-                              ShouldShowPlaybackControls="False"
-                              ShouldLoopPlayback="True"/>
+                      x:Name="CotdMediaPlayer"
+                      ShouldAutoPlay="True"
+                      ShouldMute="True"
+                      ShouldShowPlaybackControls="False"
+                      ShouldLoopPlayback="True">
+            <toolkit:MediaElement.GestureRecognizers>
+                <!-- Swipe Left for Next Video -->
+                <SwipeGestureRecognizer Direction="Left"
+                                Command="{Binding OpenNextVideoCommand}" />
+                <!-- Swipe Right for Previous Video -->
+                <SwipeGestureRecognizer Direction="Right"
+                                Command="{Binding OpenPreviousVideoCommand}" />
+            </toolkit:MediaElement.GestureRecognizers>
+        </toolkit:MediaElement>
+
 
         <!-- Transparent bar with three equally spaced buttons, overlaid at the bottom of the grid -->
         <Grid VerticalOptions="End"

@@ -26,7 +26,16 @@
         <Image AbsoluteLayout.LayoutBounds="0,0,1,1"
                AbsoluteLayout.LayoutFlags="All"
                Source="{Binding CurrentImage}"
-               Aspect="AspectFill" />
+               Aspect="AspectFill">
+                    <Image.GestureRecognizers>
+                        <!-- Swipe Left for Next Image -->
+                        <SwipeGestureRecognizer Direction="Left"
+                                        Command="{Binding OpenNextImageCommand}" />
+                        <!-- Swipe Right for Previous Image -->
+                        <SwipeGestureRecognizer Direction="Right"
+                                        Command="{Binding OpenPreviousImageCommand}" />
+                    </Image.GestureRecognizers>
+        </Image>
 
         <!-- Overlay Grid with Buttons at the Bottom -->
         <Grid VerticalOptions="End"
