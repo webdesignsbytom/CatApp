@@ -397,6 +397,9 @@
 	  <MauiXaml Update="View\Controls\ReviewTheAppModal.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\Controls\SwipeControlsModal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\COTD\CatOfTheDayPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

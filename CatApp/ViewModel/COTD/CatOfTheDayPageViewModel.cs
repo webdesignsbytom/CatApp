@@ -17,6 +17,10 @@ namespace CatApp.ViewModel.COTD
         // Media 
         public MediaElement MediaElementController { get; set; }
 
+        // Swipe modal visible
+        [ObservableProperty]
+        public bool swipeModalIsVisiable = true;
+
         public CatOfTheDayPageViewModel(IAptabaseClient aptabase)
         {
             _aptabase = aptabase;

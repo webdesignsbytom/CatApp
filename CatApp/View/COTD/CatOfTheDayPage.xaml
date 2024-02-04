@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:i18n="clr-namespace:CatApp.Resources.Utils.Localization"
+             xmlns:swipe="clr-namespace:CatApp.View.Controls"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="CatApp.View.COTD.CatOfTheDayPage">
 
@@ -31,18 +32,31 @@
                       ShouldMute="True"
                       ShouldShowPlaybackControls="False"
                       ShouldLoopPlayback="True">
+
             <toolkit:MediaElement.GestureRecognizers>
                 <!-- Swipe Left for Next Video -->
                 <SwipeGestureRecognizer Direction="Left"
                                 Command="{Binding OpenNextVideoCommand}" />
                 <!-- Swipe Right for Previous Video -->
                 <SwipeGestureRecognizer Direction="Right"
-                                Command="{Binding OpenPreviousVideoCommand}" />
+                                Command="{Binding OpenPreviousVideoCommand}" /> 
             </toolkit:MediaElement.GestureRecognizers>
         </toolkit:MediaElement>
 
 
         <!-- Transparent bar with three equally spaced buttons, overlaid at the bottom of the grid -->
+        <Grid RowDefinitions="*" VerticalOptions="Start"
+              HorizontalOptions="FillAndExpand" >
+
+            <swipe:SwipeControlsModal 
+                    x:Name="swipeModal"
+                    Grid.Row="0"
+                    IsVisible="{Binding SwipeModalIsVisiable}"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+
+        </Grid>
+
         <Grid VerticalOptions="End"
               HorizontalOptions="FillAndExpand"
               BackgroundColor="Transparent"
@@ -89,4 +103,5 @@
         </Grid>
 
     </Grid>
+
 </ContentPage>
