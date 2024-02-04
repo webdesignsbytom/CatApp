@@ -51,14 +51,22 @@ namespace CatApp.ViewModel.Endless
             "Video/cat_video11.mp4",
             "Video/cat_video12.mp4",
         };
+
+            // Shuffle the videoFiles list
+            Random rng = new Random();
+            videoFiles = videoFiles.OrderBy(a => rng.Next()).ToList();
+
             currentIndex = 0; // Start with the first video
             UpdateCurrentVideoPath();
         }
+
         public async void SetFirstVideoSource(MediaElement mediaElement)
         {
             MediaElementController = mediaElement;
-            MediaElementController.Source = MediaSource.FromResource("Video/cat_video7.mp4");
+            // Set the MediaElement source to the first video in the shuffled list
+            MediaElementController.Source = MediaSource.FromResource(currentVideoPath);
         }
+
 
         public string CurrentVideoPath
         {
