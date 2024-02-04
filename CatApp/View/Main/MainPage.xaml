@@ -39,7 +39,7 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" Padding="20" Margin="10">
-                <Image Source="cat_app_logo.png"
+                <Image Source="cat_app_logo_svg.png"
                        Aspect="AspectFit"
                        Margin="0,25,0,0"
                        SemanticProperties.Description="Cat app logo" />

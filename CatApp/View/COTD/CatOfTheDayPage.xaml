@@ -58,10 +58,11 @@
         </Grid>
 
         <Grid VerticalOptions="End"
+              IsVisible="{Binding ControlButtonsAreVisible}"
               HorizontalOptions="FillAndExpand"
               BackgroundColor="Transparent"
               AbsoluteLayout.LayoutBounds="0,0,1,1"
-               AbsoluteLayout.LayoutFlags="All"
+              AbsoluteLayout.LayoutFlags="All"
               Margin="0,0,0,20"
               Padding="10">
 

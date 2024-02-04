@@ -19,7 +19,10 @@ namespace CatApp.ViewModel.COTD
 
         // Swipe modal visible
         [ObservableProperty]
-        public bool swipeModalIsVisiable = true;
+        public bool swipeModalIsVisiable = true;    
+        // Control buttons visible
+        [ObservableProperty]
+        public bool controlButtonsAreVisible = true;
 
         public CatOfTheDayPageViewModel(IAptabaseClient aptabase)
         {
@@ -27,6 +30,17 @@ namespace CatApp.ViewModel.COTD
 
             TrackPageLoad();
             CreateVideoPlaylist();
+        }
+
+        // Timer
+        public async void RemoveSwipeModal()
+        {
+            SwipeModalIsVisiable = false;
+        }        
+        // Hide buttons
+        public async void HideControlButtons()
+        {
+            ControlButtonsAreVisible = false;
         }
 
         // Video controls

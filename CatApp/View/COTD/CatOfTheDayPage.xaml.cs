@@ -5,19 +5,16 @@ namespace CatApp.View.COTD;
 
 public partial class CatOfTheDayPage : ContentPage
 {
-	public CatOfTheDayPageViewModel ViewModel { get; set; }
+    public CatOfTheDayPageViewModel ViewModel { get; set; }
     public CatOfTheDayPage(CatOfTheDayPageViewModel viewModel)
-	{
-		InitializeComponent();
-		BindingContext = ViewModel = viewModel;
-	}
-        
+    {
+        InitializeComponent();
+        BindingContext = ViewModel = viewModel;
+    }
+
     protected override void OnAppearing()
     {
-        if (BindingContext is CatOfTheDayPageViewModel viewModel)
-        {
-            viewModel.StartAudioPlayback();
-        }
+        ViewModel.StartAudioPlayback();
 
         var mediaElement = this.FindByName<MediaElement>("CotdMediaPlayer");
         if (mediaElement != null)
@@ -25,6 +22,17 @@ public partial class CatOfTheDayPage : ContentPage
             SetFirstVideo(mediaElement);
             mediaElement.Play();
         }
+
+        PostAppearanceActions();
+    }
+
+    private async void PostAppearanceActions()
+    {
+        // Wait for 5 seconds
+        await Task.Delay(5000);
+
+        ViewModel.RemoveSwipeModal();
+        ViewModel.HideControlButtons();
     }
 
     public async Task SetFirstVideo(MediaElement mediaElement)
