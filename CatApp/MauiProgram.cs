@@ -1,4 +1,5 @@
-﻿using CatApp.View.AI;
+﻿using CatApp.Model.User;
+using CatApp.View.AI;
 using CatApp.View.COTD;
 using CatApp.View.Endless;
 using CatApp.View.Games;
@@ -47,6 +48,8 @@ namespace CatApp
             builder.Services.AddSingleton<MenuMainPageViewModel>();
             builder.Services.AddSingleton<AiImagesPage>();
             builder.Services.AddSingleton<AiImagesPageViewModel>();
+            // Models
+            builder.Services.AddSingleton<UserModel>();
 
 #if DEBUG
             builder.Logging.AddDebug();

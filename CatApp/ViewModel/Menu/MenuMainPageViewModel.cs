@@ -16,6 +16,12 @@ namespace CatApp.ViewModel.Menu
         public async Task NavigateToGamePage()
         {
             await Shell.Current.GoToAsync("///GamesPage");
+        }            
+
+        [RelayCommand]
+        public async Task ShareCatApp()
+        {
+           // Share code
         }         
         
         [RelayCommand]

@@ -37,18 +37,19 @@ namespace CatApp.ViewModel.Endless
         {
             videoFiles = new List<string>
         {
-            "cat_video1.mp4",
-            "cat_video2.mp4",
-            "cat_video3.mp4",
-            "cat_video4.mp4",
-            "cat_video5.mp4",
-            "cat_video6.mp4",
-            "cat_video7.mp4",
-            "cat_video8.mp4",
-            "cat_video9.mp4",
-            "cat_video10.mp4",
-            "cat_video11.mp4",
-            "cat_video12.mp4",
+            "Video/cat_video1.mp4",
+            "Video/cat_video2.mp4",
+            "Video/cat_video3.mp4",
+            "Video/cat_video4.mp4",
+            "Video/cat_video5.mp4",
+            "Video/cat_video6.mp4",
+            "Video/cat_video7.mp4",
+            "Video/cat_video8.mp4",
+            "Video/cat_video9.mp4",
+            "Video/cat_video_sponsor.mp4",
+            "Video/cat_video10.mp4",
+            "Video/cat_video11.mp4",
+            "Video/cat_video12.mp4",
         };
             currentIndex = 0; // Start with the first video
             UpdateCurrentVideoPath();
@@ -56,7 +57,7 @@ namespace CatApp.ViewModel.Endless
         public async void SetFirstVideoSource(MediaElement mediaElement)
         {
             MediaElementController = mediaElement;
-            MediaElementController.Source = MediaSource.FromResource("cat_video7.mp4");
+            MediaElementController.Source = MediaSource.FromResource("Video/cat_video7.mp4");
         }
 
         public string CurrentVideoPath
@@ -74,8 +75,7 @@ namespace CatApp.ViewModel.Endless
 
         private void UpdateCurrentVideoPath()
         {
-            CurrentVideoPath = videoFiles[currentIndex]; // Update the path to the current video
-                                                         // Here, you can also add code to actually load and play the video
+            CurrentVideoPath = videoFiles[currentIndex]; // Update the path to the current
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

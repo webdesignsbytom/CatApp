@@ -35,6 +35,14 @@ public partial class EndlessCatsPage : ContentPage
         }
     }
 
+    // Play next video
+
+    private void OnMediaEnded(object sender, EventArgs e)
+    {
+        Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        ViewModel?.OpenNextVideo();
+    }
+
 
     protected override void OnDisappearing()
     {

@@ -61,6 +61,7 @@
 	  <None Remove="Resources\Fonts\SegoeIcons.ttf" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_1.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_10.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_11.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_12.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_13.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_14.png" />
@@ -95,6 +96,9 @@
 	  <None Remove="Resources\Images\Ai\cat_ai_image_40.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_41.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_42.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_43.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_44.png" />
+	  <None Remove="Resources\Images\Ai\cat_ai_image_45.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_5.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_6.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_7.png" />
@@ -112,7 +116,6 @@
 	  <None Remove="Resources\Images\small_cat_9.png" />
 	  <None Remove="Resources\Raw\cats_audio1.mp3" />
 	  <None Remove="Resources\Raw\cats_audio2.mp3" />
-	  <None Remove="Resources\Raw\cats_audio3.mp3" />
 	  <None Remove="Resources\Raw\cats_audio4.mp3" />
 	  <None Remove="Resources\Raw\cat_video1.mp4" />
 	  <None Remove="Resources\Raw\cat_video10.mp4" />
@@ -126,6 +129,8 @@
 	  <None Remove="Resources\Raw\cat_video7.mp4" />
 	  <None Remove="Resources\Raw\cat_video8.mp4" />
 	  <None Remove="Resources\Raw\cat_video9.mp4" />
+	  <None Remove="Resources\Raw\cotd_audio1.mp3" />
+	  <None Remove="Resources\Raw\Video\cat_video_sponsor.mp4" />
 	  <None Remove="Resources\Splash\splash.svg" />
 	</ItemGroup>
 
@@ -140,17 +145,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Model\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_1.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiImage>
 	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_10.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiImage>
-	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_42.png">
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_11.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiImage>
 	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_12.png">
@@ -216,9 +217,6 @@
 	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_40.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiImage>
-	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_41.png">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </MauiImage>
 	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_29.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiImage>
@@ -250,6 +248,21 @@
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiImage>
 	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_4.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_43.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_44.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_45.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_42.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_41.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiImage>
 	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_5.png">
@@ -300,46 +313,49 @@
 	  <MauiAsset Update="Resources\Raw\cats_audio2.mp3">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\cats_audio3.mp3">
+	  <MauiAsset Update="Resources\Raw\Audio\cotd_audio1.mp3">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
 	  <MauiAsset Update="Resources\Raw\cats_audio4.mp3">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\cat_video1.mp4">
+	  <MauiAsset Update="Resources\Raw\Video\cat_video1.mp4">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\cat_video10.mp4">
+	  <MauiAsset Update="Resources\Raw\Video\cat_video10.mp4">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\cat_video11.mp4">
+	  <MauiAsset Update="Resources\Raw\Video\cat_video11.mp4">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\cat_video12.mp4">
+	  <MauiAsset Update="Resources\Raw\Video\cat_video12.mp4">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\cat_video2.mp4">
+	  <MauiAsset Update="Resources\Raw\Video\cat_video2.mp4">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\cat_video3.mp4">
+	  <MauiAsset Update="Resources\Raw\Video\cat_video3.mp4">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\cat_video4.mp4">
+	  <MauiAsset Update="Resources\Raw\Video\cat_video4.mp4">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\cat_video6.mp4">
+	  <MauiAsset Update="Resources\Raw\Video\cat_video6.mp4">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\cat_video5.mp4">
+	  <MauiAsset Update="Resources\Raw\Video\cat_video5.mp4">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\cat_video7.mp4">
+	  <MauiAsset Update="Resources\Raw\Video\cat_video7.mp4">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\cat_video8.mp4">
+	  <MauiAsset Update="Resources\Raw\Video\cat_video8.mp4">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\cat_video9.mp4">
+	  <MauiAsset Update="Resources\Raw\Video\cat_video9.mp4">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\Video\cat_video_sponsor.mp4">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
 	</ItemGroup>

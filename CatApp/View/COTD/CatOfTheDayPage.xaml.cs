@@ -26,6 +26,7 @@ public partial class CatOfTheDayPage : ContentPage
             mediaElement.Play();
         }
     }
+
     public async Task SetFirstVideo(MediaElement mediaElement)
     {
         if (BindingContext is CatOfTheDayPageViewModel viewModel)

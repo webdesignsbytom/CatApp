@@ -1,4 +1,5 @@
 ﻿using Aptabase.Maui;
+using CatApp.Model.User;
 using CatApp.View.COTD;
 using CatApp.View.Endless;
 using CatApp.View.TherapyMode;
@@ -16,21 +17,35 @@ namespace CatApp
         public CatOfTheDayPageViewModel CotdViewModel { get; set; }
         public EndlessCatsPageViewModel EndlessCatsViewModel { get; set; }
         public TherapyModeViewModel TherapyViewModel { get; set; }
+        // User model
+        public UserModel UserModel { get; set; }
 
-        public App(IAptabaseClient aptabase, CatOfTheDayPageViewModel cotdViewModel, EndlessCatsPageViewModel endlessCatsViewModel, TherapyModeViewModel therapyViewModel)
+        public App(IAptabaseClient aptabase, CatOfTheDayPageViewModel cotdViewModel, EndlessCatsPageViewModel endlessCatsViewModel, TherapyModeViewModel therapyViewModel, UserModel userModel)
         {
             BindingContext = CotdViewModel = cotdViewModel;
             BindingContext = EndlessCatsViewModel = endlessCatsViewModel;
             BindingContext = TherapyViewModel = therapyViewModel;
-
+            UserModel = userModel;
             InitializeComponent();
 
             // Analytics
             _aptabase = aptabase;
 
             TrackAppOpen();
+            StartReviewTimer();
 
             MainPage = new AppShell();
+        }
+
+        private void StartReviewTimer()
+        {
+            var timer = new System.Timers.Timer(300000); // 5 minutes
+            timer.Elapsed += (sender, e) =>
+            {
+                UserModel.ReviewTimerimerCompleted = true;
+                timer.Stop();
+            };
+            timer.Start();
         }
 
         private void TrackAppOpen()

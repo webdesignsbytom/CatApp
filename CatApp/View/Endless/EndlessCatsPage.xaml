@@ -29,7 +29,8 @@
                       ShouldAutoPlay="True"
                       ShouldMute="True"
                       ShouldShowPlaybackControls="False"
-                      ShouldLoopPlayback="True">
+                      MediaEnded="OnMediaEnded"
+                      ShouldLoopPlayback="False">
             <toolkit:MediaElement.GestureRecognizers>
                 <!-- Swipe Left for Next Video -->
                 <SwipeGestureRecognizer Direction="Left"

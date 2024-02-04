@@ -43,6 +43,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
                 <Button Grid.Row="0" 
@@ -58,7 +59,12 @@
                 <Button Grid.Row="2" 
                         Text="{i18n:Translate SponsorButton}" 
                         Style="{StaticResource CatButtonStyle}" 
-                        Command="{Binding VisitSponsorWebsiteCommand}" />                
+                        Command="{Binding VisitSponsorWebsiteCommand}" />                       
+                
+                <Button Grid.Row="3" 
+                        Text="{i18n:Translate ShareButton}" 
+                        Style="{StaticResource CatButtonStyle}" 
+                        Command="{Binding ShareCatAppCommand}" />                
                 
 
 

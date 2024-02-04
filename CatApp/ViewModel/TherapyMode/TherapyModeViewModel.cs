@@ -25,7 +25,7 @@ namespace CatApp.ViewModel.TherapyMode
         public async void SetVideoSource(MediaElement mediaElement)
         {
             MediaElementController = mediaElement;
-            MediaElementController.Source = MediaSource.FromResource("cat_video3.mp4");
+            MediaElementController.Source = MediaSource.FromResource("Video/cat_video1.mp4");
         }
 
         // Analytics

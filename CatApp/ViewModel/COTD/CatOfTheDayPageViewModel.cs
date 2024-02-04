@@ -36,18 +36,19 @@ namespace CatApp.ViewModel.COTD
         {
             videoFiles = new List<string>
         {
-            "cat_video1.mp4",
-            "cat_video2.mp4",
-            "cat_video3.mp4",
-            "cat_video4.mp4",
-            "cat_video5.mp4",
-            "cat_video6.mp4",
-            "cat_video7.mp4",
-            "cat_video8.mp4",
-            "cat_video9.mp4",
-            "cat_video10.mp4",
-            "cat_video11.mp4",
-            "cat_video12.mp4",
+            "Video/cat_video1.mp4",
+            "Video/cat_video2.mp4",
+            "Video/cat_video3.mp4",
+            "Video/cat_video4.mp4",
+            "Video/cat_video5.mp4",
+            "Video/cat_video6.mp4",
+            "Video/cat_video7.mp4",
+            "Video/cat_video8.mp4",
+            "Video/cat_video9.mp4",
+            "Video/cat_video_sponsor.mp4",
+            "Video/cat_video10.mp4",
+            "Video/cat_video11.mp4",
+            "Video/cat_video12.mp4",
         };
             currentIndex = 0; // Start with the first video
             UpdateCurrentVideoPath();
@@ -55,7 +56,7 @@ namespace CatApp.ViewModel.COTD
         public async void SetFirstVideoSource(MediaElement mediaElement)
         {
             MediaElementController = mediaElement;
-            MediaElementController.Source = MediaSource.FromResource("cat_video1.mp4");
+            MediaElementController.Source = MediaSource.FromResource("Video/cat_video1.mp4");
             // MediaElementController.Source = "http://localhost:4000/videos/cat-of-the-day";
             // MediaElementController.Source = "https://cat-app-server-sigma.vercel.app/videos/cat-of-the-day";
         }
@@ -88,7 +89,7 @@ namespace CatApp.ViewModel.COTD
 
         public async void StartAudioPlayback()
         {
-            audioPlayer = AudioManager.Current.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("cats_audio3.mp3"));
+            audioPlayer = AudioManager.Current.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("Audio/cotd_audio1.mp3"));
             audioPlayer.Volume = 0.5;
             audioPlayer.Loop = true;
             audioPlayer.Play();

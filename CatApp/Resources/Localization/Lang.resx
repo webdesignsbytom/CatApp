@@ -150,13 +150,13 @@
   <data name="ReviewModalTitle" xml:space="preserve">
     <value>Enjoying our App?</value>
   </data>
+  <data name="ShareButton" xml:space="preserve">
+    <value>Share</value>
+  </data>
   <data name="SponsorButton" xml:space="preserve">
     <value>Sponsor</value>
   </data>
   <data name="TherapyMode" xml:space="preserve">
     <value>Therapy Mode</value>
-  </data>
-  <data name="WelcomeMessage" xml:space="preserve">
-    <value>Welcome</value>
   </data>
 </root>
