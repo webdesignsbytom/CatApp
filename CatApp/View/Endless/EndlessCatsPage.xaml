@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:swipe="clr-namespace:CatApp.View.Controls"
              x:Class="CatApp.View.Endless.EndlessCatsPage">
 
     <ContentPage.Resources>
@@ -31,7 +32,11 @@
                       ShouldShowPlaybackControls="False"
                       MediaEnded="OnMediaEnded"
                       ShouldLoopPlayback="False">
+            
             <toolkit:MediaElement.GestureRecognizers>
+                <!-- Tap screen -->
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+                
                 <!-- Swipe Left for Next Video -->
                 <SwipeGestureRecognizer Direction="Left"
                                 Command="{Binding OpenNextVideoCommand}" />
@@ -42,11 +47,25 @@
         </toolkit:MediaElement>
 
         <!-- Transparent bar with three equally spaced buttons, overlaid at the bottom of the grid -->
+        <Grid RowDefinitions="*" VerticalOptions="Start"
+              HorizontalOptions="FillAndExpand" >
+
+            <swipe:SwipeControlsModal 
+                    x:Name="swipeModal"
+                    Grid.Row="0"
+                    IsVisible="{Binding SwipeModalIsVisiable}"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+
+        </Grid>
+
+        <!-- Transparent bar with three equally spaced buttons, overlaid at the bottom of the grid -->
         <Grid VerticalOptions="End"
+              IsVisible="{Binding ControlButtonsAreVisible}"
               HorizontalOptions="FillAndExpand"
               BackgroundColor="Transparent"
               AbsoluteLayout.LayoutBounds="0,0,1,1"
-               AbsoluteLayout.LayoutFlags="All"
+              AbsoluteLayout.LayoutFlags="All"
               Margin="0,0,0,20"
               Padding="10">
 

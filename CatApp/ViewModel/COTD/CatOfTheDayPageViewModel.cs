@@ -41,6 +41,17 @@ namespace CatApp.ViewModel.COTD
         public async void HideControlButtons()
         {
             ControlButtonsAreVisible = false;
+        }        
+        
+        public async void ShowControlButtons()
+        {
+            ControlButtonsAreVisible = true;
+        }
+
+        public async Task OnScreenTap()
+        {
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            ShowControlButtons();
         }
 
         // Video controls

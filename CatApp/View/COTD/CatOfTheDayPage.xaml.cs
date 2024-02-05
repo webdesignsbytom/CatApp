@@ -23,9 +23,17 @@ public partial class CatOfTheDayPage : ContentPage
             mediaElement.Play();
         }
 
+        ShowTempComponents();
         PostAppearanceActions();
     }
 
+    // Show menu buttons and label
+    public void ShowTempComponents()
+    {
+        ViewModel.ShowControlButtons();
+    }
+
+    // Hide menu and swipe after 5 seconds
     private async void PostAppearanceActions()
     {
         // Wait for 5 seconds
@@ -35,6 +43,7 @@ public partial class CatOfTheDayPage : ContentPage
         ViewModel.HideControlButtons();
     }
 
+    // Set first video from list
     public async Task SetFirstVideo(MediaElement mediaElement)
     {
         if (BindingContext is CatOfTheDayPageViewModel viewModel)
@@ -43,6 +52,7 @@ public partial class CatOfTheDayPage : ContentPage
         }
     }
 
+    // Stop audio and video when page closes
     protected override void OnDisappearing()
     {
         base.OnDisappearing();
@@ -59,4 +69,19 @@ public partial class CatOfTheDayPage : ContentPage
         }
     }
 
+    // Reopen control buttons
+    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        ViewModel.OnScreenTap();
+        CloseControlButtons();
+    }
+
+    // Hide menu and swipe after 5 seconds
+    private async void CloseControlButtons()
+    {
+        // Wait for 5 seconds
+        await Task.Delay(5000);
+
+        ViewModel.HideControlButtons();
+    }
 }

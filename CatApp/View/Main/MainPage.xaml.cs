@@ -10,5 +10,22 @@ namespace CatApp.View.Main
             InitializeComponent();
             BindingContext = ViewModel = viewModel;
         }
+
+        protected override void OnAppearing()
+        {
+            if (ViewModel != null)
+            {
+
+                if (ViewModel.ReviewVisitCount == 3)
+                {
+                    ViewModel.OpenReviewModal();
+                    ViewModel.ResetReviewInt();
+                }
+                else
+                {
+                    ViewModel.IncreaseReviewInt();
+                }
+            }
+        }
     }
 }

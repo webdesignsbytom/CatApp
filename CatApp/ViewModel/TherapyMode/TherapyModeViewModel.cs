@@ -13,6 +13,11 @@ namespace CatApp.ViewModel.TherapyMode
         // Analytics
         IAptabaseClient _aptabase;
         // Media 
+
+        // Control buttons visible
+        [ObservableProperty]
+        public bool controlButtonsAreVisible = true;
+
         public MediaElement MediaElementController { get; set; }
         public TherapyModeViewModel(IAptabaseClient aptabase)
         {
@@ -20,6 +25,24 @@ namespace CatApp.ViewModel.TherapyMode
 
             TrackPageLoad();
         }
+
+        // Hide buttons
+        public async void HideControlButtons()
+        {
+            ControlButtonsAreVisible = false;
+        }
+
+        public async void ShowControlButtons()
+        {
+            ControlButtonsAreVisible = true;
+        }
+
+        public async Task OnScreenTap()
+        {
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            ShowControlButtons();
+        }
+
 
         // Video Controls
         public async void SetVideoSource(MediaElement mediaElement)

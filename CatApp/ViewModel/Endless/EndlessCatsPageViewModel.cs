@@ -17,6 +17,12 @@ namespace CatApp.ViewModel.Endless
         // Media 
         public MediaElement MediaElementController { get; set; }
 
+        // Swipe modal visible
+        [ObservableProperty]
+        public bool swipeModalIsVisiable = true;
+        // Control buttons visible
+        [ObservableProperty]
+        public bool controlButtonsAreVisible = true;
 
         public EndlessCatsPageViewModel(IAptabaseClient aptabase)
         {
@@ -24,6 +30,28 @@ namespace CatApp.ViewModel.Endless
 
             TrackPageLoad();
             CreateVideoPlaylist();
+        }
+
+        // Timer
+        public async void RemoveSwipeModal()
+        {
+            SwipeModalIsVisiable = false;
+        }
+        // Hide buttons
+        public async void HideControlButtons()
+        {
+            ControlButtonsAreVisible = false;
+        }
+
+        public async void ShowControlButtons()
+        {
+            ControlButtonsAreVisible = true;
+        }
+
+        public async Task OnScreenTap()
+        {
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            ShowControlButtons();
         }
 
         // Video controls

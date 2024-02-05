@@ -11,7 +11,10 @@ namespace CatApp.ViewModel.Main
 
         // Review modal
         [ObservableProperty]
-        private bool reviewNotificationVisible = true;
+        private bool reviewNotificationVisible = false;
+
+        // Reviews
+        public int ReviewVisitCount { get; set; } = 0;
 
         public MainPageViewModel(IAptabaseClient aptabase)
         {
@@ -33,6 +36,23 @@ namespace CatApp.ViewModel.Main
         public async Task CloseReviewModal()
         {
             ReviewNotificationVisible = false;
+        }        
+        
+        [RelayCommand]
+        public async Task OpenReviewModal()
+        {
+            ReviewNotificationVisible = true;
+        }
+
+        // Review int
+        public void IncreaseReviewInt()
+        {
+            ReviewVisitCount++;
+        }        
+        
+        public void ResetReviewInt()
+        {
+            ReviewVisitCount = 0;
         }
 
         // Navigation

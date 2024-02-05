@@ -25,6 +25,23 @@ public partial class TherapyModePage : ContentPage
             SetFirstVideo(mediaElement);
             mediaElement.Play();
         }
+
+        PostAppearanceActions();
+    }
+
+    // Show menu buttons and label
+    public void ShowTempComponents()
+    {
+        ViewModel.ShowControlButtons();
+    }
+
+    // Hide menu and swipe after 5 seconds
+    private async void PostAppearanceActions()
+    {
+        // Wait for 5 seconds
+        await Task.Delay(5000);
+
+        ViewModel.HideControlButtons();
     }
 
     public async Task SetFirstVideo(MediaElement mediaElement)
@@ -48,5 +65,21 @@ public partial class TherapyModePage : ContentPage
         {
             mediaElement.Stop();
         }
+    }
+
+    // Reopen control buttons
+    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        ViewModel.OnScreenTap();
+        CloseControlButtons();
+    }
+
+    // Hide menu and swipe after 5 seconds
+    private async void CloseControlButtons()
+    {
+        // Wait for 5 seconds
+        await Task.Delay(5000);
+
+        ViewModel.HideControlButtons();
     }
 }

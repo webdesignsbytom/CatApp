@@ -29,14 +29,21 @@
                           ShouldAutoPlay="True"
                           ShouldShowPlaybackControls="False"
                           ShouldMute="True"
-                          ShouldLoopPlayback="True"/>
+                          ShouldLoopPlayback="True">
+            
+            <toolkit:MediaElement.GestureRecognizers>
+                <!-- Tap screen -->
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+            </toolkit:MediaElement.GestureRecognizers>
+        </toolkit:MediaElement>
 
-        <!-- Transparent bar with three equally spaced buttons, overlaid at the bottom of the grid -->
+        <!-- Transparent bar with two equally spaced buttons, overlaid at the bottom of the grid -->
         <Grid VerticalOptions="End"
+              IsVisible="{Binding ControlButtonsAreVisible}"
               HorizontalOptions="FillAndExpand"
               BackgroundColor="Transparent"
               AbsoluteLayout.LayoutBounds="0,0,1,1"
-               AbsoluteLayout.LayoutFlags="All"
+              AbsoluteLayout.LayoutFlags="All"
               Margin="0,0,0,20"
               Padding="10">
 
