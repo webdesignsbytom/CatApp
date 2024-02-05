@@ -34,7 +34,7 @@
                 <Setter Property="BackgroundColor" Value="#FFA500"/>
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="CornerRadius" Value="5"/>
-                <Setter Property="Margin" Value="0,55,0,10"/>
+                <Setter Property="Margin" Value="0,30,0,10"/>
                 <Setter Property="WidthRequest" Value="200"/>
                 <Setter Property="HeightRequest" Value="50"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
@@ -54,7 +54,7 @@
             VerticalOptions="Center" 
             BackgroundColor="AliceBlue"
             CornerRadius="10"
-            Padding="30,10"
+            Padding="0,10"
             HorizontalOptions="Center">
 
             <VerticalStackLayout 
@@ -75,7 +75,7 @@
                     <!-- Review Button -->
                     <Button Text="{i18n:Translate ReviewModalButton}" 
                             Style="{StaticResource CatButtonStyle}" 
-                            Command="{Binding OpenReviewAppCommand}" />
+                            Clicked="Button_Clicked" />
 
                     <Grid Margin="0,20,0,0">
                         <Grid.ColumnDefinitions>
