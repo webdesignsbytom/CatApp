@@ -102,6 +102,7 @@
 	  <None Remove="Resources\Images\Ai\cat_ai_image_8.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_9.png" />
 	  <None Remove="Resources\Images\cat_app_logo_svg.svg" />
+	  <None Remove="Resources\Images\paw_print_svg.svg" />
 	  <None Remove="Resources\Images\small_cat_1.png" />
 	  <None Remove="Resources\Images\small_cat_2.png" />
 	  <None Remove="Resources\Images\small_cat_3.png" />
@@ -362,6 +363,9 @@
 
 	<ItemGroup>
 	  <MauiImage Update="Resources\Images\cat_app_logo_svg.svg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiImage>
+	  <MauiImage Update="Resources\Images\paw_print_svg.svg">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiImage>
 	  <MauiImage Update="Resources\Images\small_cat_1.png">

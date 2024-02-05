@@ -66,9 +66,6 @@
                         Style="{StaticResource CatButtonStyle}" 
                         Command="{Binding ShareCatAppCommand}" />                
                 
-
-
-
             </Grid>
 
             <Grid Grid.Row="1" Padding="20" Margin="10">
