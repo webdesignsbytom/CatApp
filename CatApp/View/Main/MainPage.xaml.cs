@@ -13,7 +13,7 @@ namespace CatApp.View.Main
 
         protected override void OnAppearing()
         {
-            if (ViewModel != null)
+            if (ViewModel != null && ViewModel.User.HasReviewedApp == false)
             {
 
                 if (ViewModel.ReviewVisitCount == 3)

@@ -32,20 +32,21 @@ namespace CatApp
             _aptabase = aptabase;
 
             TrackAppOpen();
-            StartReviewTimer();
+            CheckReviewStatus(); 
 
             MainPage = new AppShell();
         }
 
-        private void StartReviewTimer()
+        private async Task CheckReviewStatus()
         {
-            var timer = new System.Timers.Timer(300000); // 5 minutes
-            timer.Elapsed += (sender, e) =>
+            var reviewStatus = await SecureStorage.Default.GetAsync("has_reviewed");
+            Console.WriteLine($"");
+            Console.WriteLine($"reviewStatus {reviewStatus}");
+
+            if (reviewStatus == "true")
             {
-                UserModel.ReviewTimerimerCompleted = true;
-                timer.Stop();
-            };
-            timer.Start();
+                UserModel.HasReviewedApp = true;
+            }
         }
 
         private void TrackAppOpen()

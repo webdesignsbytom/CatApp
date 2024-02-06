@@ -1,4 +1,5 @@
 ﻿using Aptabase.Maui;
+using CatApp.Model.User;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Plugin.Maui.Audio;
@@ -11,6 +12,8 @@ namespace CatApp.ViewModel.Main
         IAptabaseClient _aptabase;
         // Audio
         private IAudioPlayer audioPlayer;
+        // User
+        public UserModel User { get; set; }
 
         // Review modal
         [ObservableProperty]
@@ -19,9 +22,11 @@ namespace CatApp.ViewModel.Main
         // Reviews - count until popup appears
         public int ReviewVisitCount { get; set; } = 0;
 
-        public MainPageViewModel(IAptabaseClient aptabase)
+        public MainPageViewModel(IAptabaseClient aptabase, UserModel user)
         {
             _aptabase = aptabase;
+
+            User = user;
 
             TrackPageLoad();
             LoadAudioFiles();
@@ -40,6 +45,35 @@ namespace CatApp.ViewModel.Main
         {
             audioPlayer = AudioManager.Current.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("Audio/meow_sound_effect.mp3"));
         }
+
+        [RelayCommand]
+        public async Task ReviewApp()
+        {
+            string storeUrl = string.Empty;
+
+            // Perform platform check at runtime
+            if (DeviceInfo.Platform == DevicePlatform.iOS)
+            {
+                // iOS App Store URL
+                storeUrl = "https://apps.apple.com/app/idYOUR_APP_ID";
+            }
+            else if (DeviceInfo.Platform == DevicePlatform.Android)
+            {
+                // Android Google Play Store URL
+                storeUrl = "https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME";
+            }
+
+
+            // Check if the URL can be opened and then open it
+            if (!string.IsNullOrEmpty(storeUrl) && await Launcher.CanOpenAsync(storeUrl))
+            {
+                // Prevent review pop up from reappearing
+                await SecureStorage.Default.SetAsync("has_reviewed", "true");
+                User.HasReviewedApp = true;
+                await Launcher.OpenAsync(storeUrl);
+            }
+        }
+
 
         // Toggle controls
         // Close review modal
