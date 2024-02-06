@@ -103,6 +103,9 @@
 	  <None Remove="Resources\Images\Ai\cat_ai_image_9.png" />
 	  <None Remove="Resources\Images\cat_app_logo_svg.svg" />
 	  <None Remove="Resources\Images\Games\cat1.png" />
+	  <None Remove="Resources\Images\Games\cat2.png" />
+	  <None Remove="Resources\Images\Games\cat3.png" />
+	  <None Remove="Resources\Images\Games\cat4.png" />
 	  <None Remove="Resources\Images\paw_print_svg.svg" />
 	  <None Remove="Resources\Images\small_cat_1.png" />
 	  <None Remove="Resources\Images\small_cat_2.png" />
@@ -136,6 +139,15 @@
 
 	<ItemGroup>
 	  <EmbeddedResource Include="Resources\Images\Games\cat1.png" />
+	  <EmbeddedResource Include="Resources\Images\Games\cat2.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\Images\Games\cat3.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\Images\Games\cat4.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>

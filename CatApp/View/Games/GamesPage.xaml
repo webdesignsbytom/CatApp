@@ -74,9 +74,9 @@
 
             <!-- Next button -->
             <Button Grid.Column="3"
-                     Text="&#xe893;"
+                     Text="&#xe72c;"
                      FontFamily="Segoe Fluent Icons"
-                     Command="{Binding OpenNextVideoCommand}"
+                     Command="{Binding SwitchToNextCatCommand}"
                      Style="{StaticResource GameButtonStyle}"/>
 
         </Grid>
