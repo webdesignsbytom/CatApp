@@ -44,6 +44,7 @@ public partial class EndlessCatsPage : ContentPage
 
         ViewModel.RemoveSwipeModal();
         ViewModel.HideControlButtons();
+        ViewModel.HasTappedScreen = false;
     }
 
     // Set first video to play
@@ -82,8 +83,16 @@ public partial class EndlessCatsPage : ContentPage
     // Reopen control buttons
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        ViewModel.OnScreenTap();
-        CloseControlButtons();
+        if (ViewModel.HasTappedScreen == true)
+        {
+            return;
+        }
+        else
+        {
+            ViewModel.HasTappedScreen = true;
+            ViewModel.OnScreenTap();
+            CloseControlButtons();
+        }
     }
 
     // Hide menu and swipe after 5 seconds
@@ -93,5 +102,6 @@ public partial class EndlessCatsPage : ContentPage
         await Task.Delay(5000);
 
         ViewModel.HideControlButtons();
+        ViewModel.HasTappedScreen = false;
     }
 }

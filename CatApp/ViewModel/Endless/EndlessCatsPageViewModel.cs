@@ -23,7 +23,8 @@ namespace CatApp.ViewModel.Endless
         // Control buttons visible
         [ObservableProperty]
         public bool controlButtonsAreVisible = true;
-
+        // Prevent double taps
+        public bool HasTappedScreen = true;
         public EndlessCatsPageViewModel(IAptabaseClient aptabase)
         {
             _aptabase = aptabase;

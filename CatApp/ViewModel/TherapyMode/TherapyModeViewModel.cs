@@ -12,12 +12,14 @@ namespace CatApp.ViewModel.TherapyMode
         private IAudioPlayer audioPlayer;
         // Analytics
         IAptabaseClient _aptabase;
-        // Media 
 
         // Control buttons visible
         [ObservableProperty]
         public bool controlButtonsAreVisible = true;
+        // Prevent double taps
+        public bool HasTappedScreen = true;
 
+        // Media
         public MediaElement MediaElementController { get; set; }
         public TherapyModeViewModel(IAptabaseClient aptabase)
         {

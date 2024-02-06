@@ -23,6 +23,8 @@ namespace CatApp.ViewModel.COTD
         // Control buttons visible
         [ObservableProperty]
         public bool controlButtonsAreVisible = true;
+        // Prevent double taps
+        public bool HasTappedScreen = true;
 
         public CatOfTheDayPageViewModel(IAptabaseClient aptabase)
         {
@@ -50,7 +52,6 @@ namespace CatApp.ViewModel.COTD
 
         public async Task OnScreenTap()
         {
-            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             ShowControlButtons();
         }
 

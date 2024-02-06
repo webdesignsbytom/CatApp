@@ -42,6 +42,7 @@ public partial class TherapyModePage : ContentPage
         await Task.Delay(5000);
 
         ViewModel.HideControlButtons();
+        ViewModel.HasTappedScreen = false;
     }
 
     public async Task SetFirstVideo(MediaElement mediaElement)
@@ -70,8 +71,16 @@ public partial class TherapyModePage : ContentPage
     // Reopen control buttons
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        ViewModel.OnScreenTap();
-        CloseControlButtons();
+        if (ViewModel.HasTappedScreen == true)
+        {
+            return;
+        }
+        else
+        {
+            ViewModel.HasTappedScreen = true;
+            ViewModel.OnScreenTap();
+            CloseControlButtons();
+        }
     }
 
     // Hide menu and swipe after 5 seconds
@@ -81,5 +90,6 @@ public partial class TherapyModePage : ContentPage
         await Task.Delay(5000);
 
         ViewModel.HideControlButtons();
+        ViewModel.HasTappedScreen = false;
     }
 }

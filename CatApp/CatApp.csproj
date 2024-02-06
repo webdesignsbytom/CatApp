@@ -112,6 +112,7 @@
 	  <None Remove="Resources\Images\small_cat_7.png" />
 	  <None Remove="Resources\Images\small_cat_8.png" />
 	  <None Remove="Resources\Images\small_cat_9.png" />
+	  <None Remove="Resources\Raw\Audio\meow_sound_effect.mp3" />
 	  <None Remove="Resources\Raw\cats_audio1.mp3" />
 	  <None Remove="Resources\Raw\cats_audio2.mp3" />
 	  <None Remove="Resources\Raw\cats_audio4.mp3" />
@@ -306,6 +307,9 @@
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
 	  <MauiAsset Update="Resources\Raw\Audio\cat_audio6.mp3">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\Audio\meow_sound_effect.mp3">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
 	  <MauiAsset Update="Resources\Raw\cats_audio1.mp3">
