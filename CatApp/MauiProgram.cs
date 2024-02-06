@@ -15,6 +15,7 @@ using CatApp.ViewModel.Menu;
 using CatApp.ViewModel.TherapyMode;
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace CatApp
 {
@@ -27,6 +28,7 @@ namespace CatApp
                 .UseMauiApp<App>()
                 .UseAptabase("A-EU-1714048004") // 👈 this is where you enter your App Key
                 .UseMauiCommunityToolkitMediaElement()
+                .UseSkiaSharp()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

@@ -1,12 +1,84 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
              x:Class="CatApp.View.Games.GamesPage">
     
-    <VerticalStackLayout>
-        <Label 
-            Text="Games Page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="GameButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#FFA500"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontSize" Value="22"/>
+                <Setter Property="WidthRequest" Value="50"/>
+            </Style>
+            <Style x:Key="GeneralTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#555555"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontFamily" Value="OpenSansRegular"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <AbsoluteLayout>
+        <Grid AbsoluteLayout.LayoutFlags="All"
+              AbsoluteLayout.LayoutBounds="0,0,1,1">
+
+            <skia:SKCanvasView 
+                x:Name="canvasView" 
+                PaintSurface="OnPaintSurface"
+                EnableTouchEvents="True"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                >
+            </skia:SKCanvasView>
+        </Grid>
+
+        <Grid VerticalOptions="End"
+              HorizontalOptions="FillAndExpand"
+              BackgroundColor="Transparent"
+              AbsoluteLayout.LayoutBounds="0,0,1,1"
+              AbsoluteLayout.LayoutFlags="All"
+              Margin="0,0,0,20"
+              Padding="10">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Back button -->
+            <Button Grid.Column="0"
+                    Text="&#xe892;"
+                    FontFamily="Segoe Fluent Icons"
+                    Command="{Binding OpenPreviousVideoCommand}"
+                    Style="{StaticResource GameButtonStyle}"/>
+
+            <!-- Like button -->
+            <Button Grid.Column="1"
+                     Text="&#xe76e;"
+                     FontFamily="Segoe Fluent Icons"
+                     Command="{Binding LikeVideoCommand}"
+                     Style="{StaticResource GameButtonStyle}"/>
+
+            <!-- Home button -->
+            <Button Grid.Column="2"
+                     Text="&#xea8a;"
+                     FontFamily="Segoe Fluent Icons"
+                     Command="{Binding NavigateToMainPageCommand}"
+                     Style="{StaticResource GameButtonStyle}"/>
+
+            <!-- Next button -->
+            <Button Grid.Column="3"
+                     Text="&#xe893;"
+                     FontFamily="Segoe Fluent Icons"
+                     Command="{Binding OpenNextVideoCommand}"
+                     Style="{StaticResource GameButtonStyle}"/>
+
+        </Grid>
+    </AbsoluteLayout>
 </ContentPage>
