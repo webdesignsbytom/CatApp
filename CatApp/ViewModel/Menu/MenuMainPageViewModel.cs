@@ -18,13 +18,6 @@ namespace CatApp.ViewModel.Menu
             await Shell.Current.GoToAsync("///GamesPage");
         }            
 
-        [RelayCommand]
-        public async Task ShareTheCatApp()
-        {
-            Console.WriteLine("1111111111111111111111111111111111");
-            OpenShareStore();
-        }
-
         public async Task OpenShareStore()
         {
             Console.WriteLine("222222222222222222222222222222");

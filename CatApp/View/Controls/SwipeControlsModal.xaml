@@ -9,19 +9,21 @@
                 <Setter Property="FontSize" Value="16"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontFamily" Value="Segoe Fluent Icons"/>
-                <Setter Property="BackgroundColor" Value="#000"/>
+                <!-- BackgroundColor moved to Frame -->
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="Margin" Value="0,20"/>
+                <Setter Property="Margin" Value="0"/>
                 <Setter Property="Padding" Value="10,10"/>
             </Style>
         </ResourceDictionary>
     </ContentView.Resources>
-    
+
     <VerticalStackLayout>
-        <Label 
-            Style="{StaticResource GeneralTextStyle}"
-            Text="&#xe927;   Swipe left and right to change video   &#xe927;" />
-        
+        <!-- Frame added for rounded corners and background color -->
+        <Frame BackgroundColor="#80000000" CornerRadius="20" Padding="0" HasShadow="False" BorderColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20">
+            <Label 
+                Style="{StaticResource GeneralTextStyle}"
+                Text="Swipe left and right to change video" />
+        </Frame>
     </VerticalStackLayout>
 </ContentView>

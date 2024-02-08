@@ -27,15 +27,16 @@ namespace CatApp
             builder
                 .UseMauiApp<App>()
                 .UseAptabase("A-EU-1714048004") // 👈 this is where you enter your App Key
-                .UseMauiCommunityToolkitMediaElement()
-                .UseSkiaSharp()
+                .UseMauiCommunityToolkitMediaElement() // Video player
+                .UseSkiaSharp() // Canvas
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                    fonts.AddFont("SegoeIcons.ttf", "Segoe Fluent Icons");
+                    fonts.AddFont("SegoeIcons.ttf", "Segoe Fluent Icons"); // Icons 
                 });
 
+            // Pages
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainPageViewModel>();
             builder.Services.AddSingleton<CatOfTheDayPage>();

@@ -50,6 +50,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
 
@@ -60,8 +61,24 @@
                      Command="{Binding LikeVideoCommand}"
                      Style="{StaticResource CatButtonStyle}"/>
 
-            <!-- Home button -->
+            <!-- Mute button -->
             <Button Grid.Column="1"
+                     Text="&#xe74f;"
+                     IsVisible="{Binding IsMuted}"
+                     FontFamily="Segoe Fluent Icons"
+                     Command="{Binding MuteAudioCommand}"
+                     Style="{StaticResource CatButtonStyle}"/>
+
+            <!--Unmute button -->
+            <Button Grid.Column="1"
+                     Text="&#xe767;"
+                     IsVisible="{Binding IsNotMuted}"
+                     FontFamily="Segoe Fluent Icons"
+                     Command="{Binding MuteAudioCommand}"
+                     Style="{StaticResource CatButtonStyle}"/>
+
+            <!-- Home button -->
+            <Button Grid.Column="2"
                  Text="&#xea8a;"
                  FontFamily="Segoe Fluent Icons"
                  Command="{Binding NavigateBackToMainCommand}"

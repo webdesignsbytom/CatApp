@@ -25,6 +25,7 @@
             <Setter Property="HorizontalOptions" Value="Center"/>
         </Style>
     </ContentPage.Resources>
+    
     <AbsoluteLayout>
 
         <!-- Original Grid layout -->
@@ -58,11 +59,7 @@
                         Text="{i18n:Translate SponsorButton}" 
                         Style="{StaticResource CatButtonStyle}" 
                         Command="{Binding VisitSponsorWebsiteCommand}" />                       
-                
-                <Button Grid.Row="3" 
-                        Text="{i18n:Translate ShareButton}" 
-                        Style="{StaticResource CatButtonStyle}" 
-                        Command="{Binding ShareTheCatAppCommand}" />                
+                              
                 
             </Grid>
 

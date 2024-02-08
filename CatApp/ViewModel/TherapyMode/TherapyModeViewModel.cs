@@ -85,6 +85,28 @@ namespace CatApp.ViewModel.TherapyMode
             audioPlayer?.Play();
         }
 
+        [ObservableProperty]
+        public bool isMuted = false;
+        [ObservableProperty]
+        public bool isNotMuted = true;
+
+        // Mute audio
+        [RelayCommand]
+        public async Task MuteAudio()
+        {
+            if (!IsMuted)
+            {
+                audioPlayer.Pause();
+                IsNotMuted = false;
+                IsMuted = true;
+            }
+            else
+            {
+                audioPlayer.Play();
+                IsMuted = false;
+                IsNotMuted = true;
+            }
+        }
 
         // Like video
         [RelayCommand]

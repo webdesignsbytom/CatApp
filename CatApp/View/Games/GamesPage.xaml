@@ -49,6 +49,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <!-- Back button -->
@@ -69,7 +70,7 @@
             <Button Grid.Column="2"
                      Text="&#xea8a;"
                      FontFamily="Segoe Fluent Icons"
-                     Command="{Binding NavigateToMainPageCommand}"
+                     Command="{Binding NavigateToMenuPageCommand}"
                      Style="{StaticResource GameButtonStyle}"/>
 
             <!-- Next button -->
@@ -77,6 +78,13 @@
                      Text="&#xe72c;"
                      FontFamily="Segoe Fluent Icons"
                      Command="{Binding SwitchToNextCatCommand}"
+                     Style="{StaticResource GameButtonStyle}"/>            
+            
+            <!-- Next button -->
+            <Button Grid.Column="4"
+                     Text="&#xe72c;"
+                     FontFamily="Segoe Fluent Icons"
+                     Command="{Binding VolumeCommand}"
                      Style="{StaticResource GameButtonStyle}"/>
 
         </Grid>

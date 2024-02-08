@@ -144,6 +144,29 @@ namespace CatApp.ViewModel.Endless
             audioPlayer?.Play();
         }
 
+        [ObservableProperty]
+        public bool isMuted = false;
+        [ObservableProperty]
+        public bool isNotMuted = true;
+
+        // Mute audio
+        [RelayCommand]
+        public async Task MuteAudio()
+        {
+            if (!IsMuted)
+            {
+                audioPlayer.Pause();
+                IsNotMuted = false;
+                IsMuted = true;
+            }
+            else
+            {
+                audioPlayer.Play();
+                IsMuted = false;
+                IsNotMuted = true;
+            }
+        }
+
         // Analytics
         private void TrackPageLoad()
         {

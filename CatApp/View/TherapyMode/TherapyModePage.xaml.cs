@@ -26,6 +26,7 @@ public partial class TherapyModePage : ContentPage
             mediaElement.Play();
         }
 
+        ShowTempComponents();
         PostAppearanceActions();
     }
 

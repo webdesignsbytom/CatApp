@@ -95,7 +95,6 @@
 	  <None Remove="Resources\Images\Ai\cat_ai_image_42.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_43.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_44.png" />
-	  <None Remove="Resources\Images\Ai\cat_ai_image_45.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_5.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_6.png" />
 	  <None Remove="Resources\Images\Ai\cat_ai_image_7.png" />
@@ -116,6 +115,7 @@
 	  <None Remove="Resources\Images\small_cat_7.png" />
 	  <None Remove="Resources\Images\small_cat_8.png" />
 	  <None Remove="Resources\Images\small_cat_9.png" />
+	  <None Remove="Resources\Raw\Audio\cat-purring-68797.mp3" />
 	  <None Remove="Resources\Raw\Audio\meow_sound_effect.mp3" />
 	  <None Remove="Resources\Raw\cats_audio1.mp3" />
 	  <None Remove="Resources\Raw\cats_audio2.mp3" />
@@ -212,9 +212,6 @@
 	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_22.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiImage>
-	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_23.png">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </MauiImage>
 	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_24.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiImage>
@@ -278,7 +275,7 @@
 	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_44.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiImage>
-	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_45.png">
+	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_23.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiImage>
 	  <MauiImage Include="Resources\Images\Ai\cat_ai_image_42.png">
@@ -327,6 +324,9 @@
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
 	  <MauiAsset Update="Resources\Raw\Audio\cat_audio6.mp3">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\Audio\Game\purring_1.mp3">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </MauiAsset>
 	  <MauiAsset Update="Resources\Raw\Audio\meow_sound_effect.mp3">
