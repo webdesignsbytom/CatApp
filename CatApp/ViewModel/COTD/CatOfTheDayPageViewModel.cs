@@ -31,7 +31,6 @@ namespace CatApp.ViewModel.COTD
             _aptabase = aptabase;
 
             TrackPageLoad();
-            CreateVideoPlaylist();
         }
 
         // Timer
@@ -39,6 +38,7 @@ namespace CatApp.ViewModel.COTD
         {
             SwipeModalIsVisiable = false;
         }        
+
         // Hide buttons
         public async void HideControlButtons()
         {
@@ -61,35 +61,6 @@ namespace CatApp.ViewModel.COTD
         private string currentVideoPath;
 
         public event PropertyChangedEventHandler PropertyChanged;
-
-        public void CreateVideoPlaylist()
-        {
-            videoFiles = new List<string>
-        {
-            "Video/cat_video1.mp4",
-            "Video/cat_video2.mp4",
-            "Video/cat_video3.mp4",
-            "Video/cat_video4.mp4",
-            "Video/cat_video5.mp4",
-            "Video/cat_video6.mp4",
-            "Video/cat_video7.mp4",
-            "Video/cat_video8.mp4",
-            "Video/cat_video9.mp4",
-            "Video/cat_video_sponsor.mp4",
-            "Video/cat_video10.mp4",
-            "Video/cat_video11.mp4",
-            "Video/cat_video12.mp4",
-        };
-            currentIndex = 0; // Start with the first video
-            UpdateCurrentVideoPath();
-        }
-        public async void SetFirstVideoSource(MediaElement mediaElement)
-        {
-            MediaElementController = mediaElement;
-            MediaElementController.Source = MediaSource.FromResource("Video/cat_video1.mp4");
-            // MediaElementController.Source = "http://localhost:4000/videos/cat-of-the-day";
-            // MediaElementController.Source = "https://cat-app-server-sigma.vercel.app/videos/cat-of-the-day";
-        }
 
         public string CurrentVideoPath
         {
@@ -186,7 +157,6 @@ namespace CatApp.ViewModel.COTD
             {
                 currentIndex--;
                 UpdateCurrentVideoPath();
-                MediaElementController.Source = MediaSource.FromResource($"{CurrentVideoPath}");
             }
         }
 
@@ -198,7 +168,6 @@ namespace CatApp.ViewModel.COTD
             {
                 currentIndex++;
                 UpdateCurrentVideoPath();
-                MediaElementController.Source = MediaSource.FromResource($"{CurrentVideoPath}");
             }
         }
 

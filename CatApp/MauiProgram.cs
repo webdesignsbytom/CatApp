@@ -1,4 +1,5 @@
 ﻿using CatApp.Model.User;
+using CatApp.Services.Utils;
 using CatApp.View.AI;
 using CatApp.View.COTD;
 using CatApp.View.Endless;
@@ -53,6 +54,11 @@ namespace CatApp
             builder.Services.AddSingleton<AiImagesPageViewModel>();
             // Models
             builder.Services.AddSingleton<UserModel>();
+            // Register HttpClient
+            builder.Services.AddHttpClient<HttpService>();
+
+            // Register services
+            builder.Services.AddSingleton<VideoService>();
 
 #if DEBUG
             builder.Logging.AddDebug();

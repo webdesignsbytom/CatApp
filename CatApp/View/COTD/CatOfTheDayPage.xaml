@@ -33,17 +33,7 @@
                       ShouldLoopPlayback="True">
 
 
-            <toolkit:MediaElement.GestureRecognizers>
-                <!-- Tap screen -->
-                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
-                
-                <!-- Swipe Left for Next Video -->
-                <SwipeGestureRecognizer Direction="Left"
-                                Command="{Binding OpenNextVideoCommand}" />
-                <!-- Swipe Right for Previous Video -->
-                <SwipeGestureRecognizer Direction="Right"
-                                Command="{Binding OpenPreviousVideoCommand}" /> 
-            </toolkit:MediaElement.GestureRecognizers>
+
         </toolkit:MediaElement>
 
 

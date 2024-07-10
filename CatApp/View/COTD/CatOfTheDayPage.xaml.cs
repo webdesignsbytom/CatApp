@@ -1,3 +1,4 @@
+using CatApp.Services.Utils;
 using CatApp.ViewModel.COTD;
 using CommunityToolkit.Maui.Views;
 
@@ -5,53 +6,36 @@ namespace CatApp.View.COTD;
 
 public partial class CatOfTheDayPage : ContentPage
 {
-    public CatOfTheDayPageViewModel ViewModel { get; set; }
-    public CatOfTheDayPage(CatOfTheDayPageViewModel viewModel)
+    private readonly VideoService _videoService;
+
+    public CatOfTheDayPage(VideoService videoService)
     {
         InitializeComponent();
-        BindingContext = ViewModel = viewModel;
+        _videoService = videoService;
     }
 
-    protected override void OnAppearing()
+    protected override async void OnAppearing()
     {
-        ViewModel.StartAudioPlayback();
+        await FetchAndDisplayVideoAsync();
+    }
 
-        var mediaElement = this.FindByName<MediaElement>("CotdMediaPlayer");
-        if (mediaElement != null)
+    private async Task FetchAndDisplayVideoAsync()
+    {
+        try
         {
-            SetFirstVideo(mediaElement);
-            mediaElement.Play();
+            string videoPath = "/videos/video"; // Replace with your actual video path
+            string localVideoPath = await _videoService.FetchVideoAsync(videoPath);
+
+            // Assuming you have a VideoPlayer control in your XAML
+            CotdMediaPlayer.Source = localVideoPath;
         }
-
-        ShowTempComponents();
-        PostAppearanceActions();
-    }
-
-    // Show menu buttons and label
-    public void ShowTempComponents()
-    {
-        ViewModel.ShowControlButtons();
-    }
-
-    // Hide menu and swipe after 5 seconds
-    private async void PostAppearanceActions()
-    {
-        // Wait for 5 seconds
-        await Task.Delay(5000);
-
-        ViewModel.RemoveSwipeModal();
-        ViewModel.HideControlButtons();
-        ViewModel.HasTappedScreen = false;
+        catch (Exception ex)
+        {
+            Console.WriteLine("Unable to get video", ex);
+        }
     }
 
     // Set first video from list
-    public async Task SetFirstVideo(MediaElement mediaElement)
-    {
-        if (BindingContext is CatOfTheDayPageViewModel viewModel)
-        {
-            viewModel.SetFirstVideoSource(mediaElement);
-        }
-    }
 
     // Stop audio and video when page closes
     protected override void OnDisappearing()
@@ -68,30 +52,5 @@ public partial class CatOfTheDayPage : ContentPage
         {
             mediaElement.Stop();
         }
-    }
-
-    // Reopen control buttons
-    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
-    {
-        if (ViewModel.HasTappedScreen == true)
-        {
-            return;
-        }
-        else
-        {
-            ViewModel.HasTappedScreen = true;
-            ViewModel.OnScreenTap();
-            CloseControlButtons();
-        }
-    }
-
-    // Hide menu and swipe after 5 seconds
-    private async void CloseControlButtons()
-    {
-        // Wait for 5 seconds
-        await Task.Delay(5000);
-
-        ViewModel.HideControlButtons();
-        ViewModel.HasTappedScreen = false;
     }
 }
