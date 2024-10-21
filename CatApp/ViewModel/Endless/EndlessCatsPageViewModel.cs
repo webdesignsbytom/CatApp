@@ -25,6 +25,7 @@ namespace CatApp.ViewModel.Endless
         public bool controlButtonsAreVisible = true;
         // Prevent double taps
         public bool HasTappedScreen = true;
+
         public EndlessCatsPageViewModel(IAptabaseClient aptabase)
         {
             _aptabase = aptabase;
@@ -38,6 +39,7 @@ namespace CatApp.ViewModel.Endless
         {
             SwipeModalIsVisiable = false;
         }
+
         // Hide buttons
         public async void HideControlButtons()
         {
@@ -51,7 +53,7 @@ namespace CatApp.ViewModel.Endless
 
         public async Task OnScreenTap()
         {
-            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            Console.WriteLine("Screen tapped");
             ShowControlButtons();
         }
 
@@ -65,21 +67,14 @@ namespace CatApp.ViewModel.Endless
         public void CreateVideoPlaylist()
         {
             videoFiles = new List<string>
-        {
-            "Video/cat_video1.mp4",
-            "Video/cat_video2.mp4",
-            "Video/cat_video3.mp4",
-            "Video/cat_video4.mp4",
-            "Video/cat_video5.mp4",
-            "Video/cat_video6.mp4",
-            "Video/cat_video7.mp4",
-            "Video/cat_video8.mp4",
-            "Video/cat_video9.mp4",
-            "Video/cat_video_sponsor.mp4",
-            "Video/cat_video10.mp4",
-            "Video/cat_video11.mp4",
-            "Video/cat_video12.mp4",
-        };
+            {
+                "http://192.168.1.150:9000/catapp/videos/cotd/1718828165218.mp4",
+                "http://192.168.1.150:9000/catapp/videos/cotd/1718828165218.mp4",
+                "http://192.168.1.150:9000/catapp/videos/cotd/1718828165218.mp4",
+                "http://192.168.1.150:9000/catapp/videos/cotd/1718828165218.mp4",
+                "http://192.168.1.150:9000/catapp/videos/cotd/1718828165218.mp4",
+                "http://192.168.1.150:9000/catapp/videos/cotd/1718828165218.mp4",
+            };
 
             // Shuffle the videoFiles list
             Random rng = new Random();
@@ -92,10 +87,9 @@ namespace CatApp.ViewModel.Endless
         public async void SetFirstVideoSource(MediaElement mediaElement)
         {
             MediaElementController = mediaElement;
-            // Set the MediaElement source to the first video in the shuffled list
-            MediaElementController.Source = MediaSource.FromResource(currentVideoPath);
+            // Use FromUri for remote URLs
+            MediaElementController.Source = MediaSource.FromUri(currentVideoPath);
         }
-
 
         public string CurrentVideoPath
         {
@@ -112,7 +106,7 @@ namespace CatApp.ViewModel.Endless
 
         private void UpdateCurrentVideoPath()
         {
-            CurrentVideoPath = videoFiles[currentIndex]; // Update the path to the current
+            CurrentVideoPath = videoFiles[currentIndex]; // Update the path to the current video
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -172,13 +166,14 @@ namespace CatApp.ViewModel.Endless
         {
             _aptabase.TrackEvent("screen_view", new() {
                 { "name", "Endless Cats" }
-                });
+            });
         }
 
         // Like video
         [RelayCommand]
         public async Task LikeVideo()
         {
+            // Implement functionality for liking the video if needed
             return;
         }
 
@@ -190,7 +185,7 @@ namespace CatApp.ViewModel.Endless
             {
                 currentIndex--;
                 UpdateCurrentVideoPath();
-                MediaElementController.Source = MediaSource.FromResource($"{CurrentVideoPath}");
+                MediaElementController.Source = MediaSource.FromUri($"{CurrentVideoPath}");
             }
         }
 
@@ -202,7 +197,7 @@ namespace CatApp.ViewModel.Endless
             {
                 currentIndex++;
                 UpdateCurrentVideoPath();
-                MediaElementController.Source = MediaSource.FromResource($"{CurrentVideoPath}");
+                MediaElementController.Source = MediaSource.FromUri($"{CurrentVideoPath}");
             }
         }
 
